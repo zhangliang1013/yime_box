@@ -1,0 +1,137 @@
+<!-- 理疗师详情页面 -->
+<view class="main">
+	<view class="commonHead_left">
+		<view class='commonHead_left_back' bindtap='forMoreInfoTap'></view>
+	</view>
+	<view class="banner">
+		<view class="worker">
+			<view class="workleft">
+				<view class="work-img">
+					<image mode="scaleToFill" src="{{detail.portrait}}" />
+				</view>
+				<view class="work-name">{{detail.name}}
+					<text class="dengji">
+				 LV.{{detail.grade_name}}
+				</text>
+				</view>
+			</view>
+			<view class="workright">
+				<view class="work-info">
+					<view class="wait_code">{{detail.wait_text}}</view>
+				</view>
+			</view>
+		</view>
+		<view class="workadd">
+			<!-- 点击店铺 -->
+			<view class="workaddleft">
+				<view class="work-gongshi" bindtap='forMoreInfoTap2'>{{detail.shop_name}}</view>
+				<view class="work-gongicon">
+					<image mode="scaleToFill" src="/images/next.png" />
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="service">
+		<view class="faxinghead">服务评价</view>
+		<view class='servce-info'>
+			<view class="point">
+				<view class="point-text">{{detail.score}}</view>
+				<view class="point-name">评分</view>
+			</view>
+			<view class="shuline"></view>
+			<view class="point">
+				<view class="point-text">{{detail.discuss}}</view>
+				<view class="point-name">评论数</view>
+			</view>
+			<view class="shuline"></view>
+			<view class="point">
+				<view class="point-text">{{detail.repetitive_rate}}</view>
+				<view class="point-name">回头率</view>
+			</view>
+		</view>
+		<!-- 评论渲染 -->
+		<view class="service-item">
+			<view class="service-left">
+				<view class="service-img">
+					<!-- <image mode="aspectFit" src="{{detail.evaluate.user.head_img}}"/> -->
+					<image mode="aspectFit" src="{{detail.discuss_data.user_info.avatar}}" />
+				</view>
+			</view>
+			<!-- wx:if="{{detail.evaluate}}" -->
+			<view class="service-you">
+				<view class="service-top">
+					<view class="serv-name">
+						<view class="service-name"> {{detail.discuss_data.user_info.nickname}}</view>
+						<view class="service-person">理疗师: {{detail.name}}</view>
+					</view>
+				</view>
+				<view class="service-center">
+					<view class="service-info">
+						{{detail.discuss_data.content}}
+					</view>
+					<!-- 评论图片 -->
+					<view class="service-pic" wx:for="{{detail.discuss_data.images}}" wx:key="index">
+						<image mode="scaleToFill" src="{{item}}" />
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- 额外判断 -->
+		<view class="more">
+			<navigator url="../comment/comment?id={{goods_id}}" hover-class="none">
+				查看全部评论
+			</navigator>
+		</view>
+	</view>
+	<wxs module="m1">
+		var ToDate = function(number1) {
+			var n = number1 * 1000; //number1 为毫秒 
+			var date = getDate(n);
+			var Y = date.getFullYear() + '-';
+			var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+			var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+			var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+			var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+			return (Y + M + D);
+		}
+		module.exports.ToDate = ToDate;
+	</wxs>
+	<!-- 从业经验 -->
+	<view class="contain_">
+		<view class="congye_title">
+			从业经验
+		</view>
+		<!-- 经验明细(这里循环) -->
+		<block wx:for="{{detail.workexperience}}" wx:key="index">
+			<view class="experience_list">
+				<view class="left">
+					<view>
+						<image mode="scaleToFill" src="/images/yuan.png" class="img1" />
+					</view>
+					<view>
+						<image mode="scaleToFill" src="/images/shu.png" class="img2" />
+					</view>
+				</view>
+				<view class="right">
+					<view class="date_title">{{m1.ToDate(item.start_time)}} - {{m1.ToDate(item.end_time)}}</view>
+					<view class="content">
+						{{item.content}}
+					</view>
+				</view>
+			</view>
+		</block>
+		<block wx:if="{{detail.workexperience.length == 0}}">
+			<view class="wu_yan">
+				该理疗师暂时未展示从业经验！
+			</view>
+		</block>
+	</view>
+	<view class="kefu">
+		<block>
+			<view class="nowait">
+				<text>￥{{price}}</text>
+			</view>
+			<view class="quhao" bindtap="quhaoa">立即取号</view>
+		</block>
+	</view>
+</view>

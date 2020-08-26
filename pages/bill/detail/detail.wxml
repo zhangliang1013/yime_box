@@ -1,0 +1,144 @@
+<!-- 订单详情页面 -->
+<view class="main">
+	<view class="list">
+		<view class="page">
+			<view class="zhuzhi">
+				<view class="zhuleft">
+					<view class="workeradd huise">门店</view>
+				</view>
+				<view class="zhuright">
+					<view class="workeradd">{{obj.shop_name}}</view>
+				</view>
+			</view>
+			<view class="zhuzhi">
+				<view class="zhuleft">
+					<view class="workeradd huise">理疗师</view>
+				</view>
+				<view class="zhuright">
+					<view class="workeradd other">{{obj.doctor_name}}</view>
+				</view>
+			</view>
+			<view class="zhuzhi">
+				<view class="zhuleft">
+					<view class="workeradd huise">服务项目</view>
+				</view>
+				<view class="zhuright">
+					<view class="workeradd">{{obj.services_name}}</view>
+				</view>
+			</view>
+			<view class="zhuzhi" wx:if="{{obj.accessorialservice_name}}">
+				<view class="zhuleft">
+					<view class="workeradd huise">附加项目</view>
+				</view>
+				<view class="zhuright">
+					<view class="workeradd">{{obj.accessorialservice_name}}</view>
+				</view>
+			</view>
+			<view class="zhuzhi">
+				<view class="zhuleft">
+					<view class="workeradd huise">价格</view>
+				</view>
+				<view class="zhuright">
+					<view class="workeradd">￥{{obj.total}}</view>
+				</view>
+			</view>
+			<!-- bang优惠 -->
+			<view class="zhuzhi" wx:if="{{obj.bang_price != '0.00' && !couponPrice}}">
+				<view class="zhuleft">
+					<view class="workeradd huise">bang优惠</view>
+				</view>
+				<view class="zhuright">
+					<view class="workeradd">-￥{{obj.bang_price}}</view>
+				</view>
+			</view>
+			<!-- 支付完成显示 -->
+			<view class="zhuzhi youhui_border" wx:if="{{obj.pay_status != 1}}">
+				<view class="zhuleft">
+					<view class="workeradd huise">优惠</view>
+				</view>
+				<view class="zhuright use_youhui">
+					<view class="workeradd">
+						<text>-￥{{obj.coupon_price}}</text>
+					</view>
+				</view>
+			</view>
+			<!-- 未支付状态显示 -->
+			<navigator url="/pages/my/coupon/coupon?price={{obj.total}}" wx:if="{{obj.pay_status == 1 && obj.status != 1 && obj.status != 2}}" hover-class="none">
+				<view class="zhuzhi youhui_border">
+					<view class="zhuleft">
+						<view class="workeradd huise">优惠</view>
+					</view>
+					<view class="zhuright">
+						<view class="workeradd use_youhui">
+							<text wx:if="{{!couponPrice}}">请选择优惠券</text>
+							<text wx:if="{{couponPrice}}">{{couponPrice}}元优惠券</text>
+							<image src="/images/you.png" mode="widthFix"></image>
+						</view>
+					</view>
+				</view>
+			</navigator>
+			<!-- 合计 -->
+			<!-- 已经支付 -->
+			<view class="zhuzhi" wx:if="{{obj.status == 4 && obj.pay_status != 1}}">
+				<view class="zhuleft"></view>
+				<view class="zhuright">
+					<view class="workeradd">
+						<text class="heji">合计</text>
+						<text class="small">￥{{obj.price}}</text>
+					</view>
+				</view>
+			</view>
+			<!-- 待支付 -->
+			<view class="zhuzhi" wx:if="{{obj.status == 4 && obj.pay_status == 1}}">
+				<view class="zhuleft"></view>
+				<view class="zhuright">
+					<view class="workeradd" wx:if="{{!couponPrice}}">
+						<text class="heji">合计</text>
+						<text class="small">￥{{we.toFixed(obj.total - obj.bang_price)}}</text>
+					</view>
+					<wxs module="we">
+						var toFixed = function(value) {
+							return value.toFixed(2);
+						}
+						module.exports = {
+							toFixed: toFixed
+						}
+					</wxs>
+					<view class="workeradd" wx:if="{{couponPrice}}">
+						<text class="heji">合计</text>
+						<text class="small">￥{{we.toFixed(total - couponPrice)}}</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<wxs module="m1">
+			var ToDate = function(number1) {
+				var n = number1 * 1000; //number1 为毫秒 
+				var date = getDate(n);
+				var Y = date.getFullYear() + '-';
+				var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+				var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+				var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+				var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+				return (Y + M + D + ' ' + h + ':' + m);
+			}
+			module.exports.ToDate = ToDate;
+		</wxs>
+		<view class="desc">
+			<view class="row">订单编号: {{obj.order_on}}</view>
+			<view class="row">订单时间: {{m1.ToDate(obj.createtime)}}</view>
+			<view class="row" wx:if="{{obj.pay_status != 1 && obj.pay_status != 0}}">支付方式: {{obj.pay_status == 2 ? '微信支付' : '支付宝支付'}}</view>
+		</view>
+	</view>
+	<view class="btn" wx:if="{{obj.status == 5  && obj.pay_status != 1}}">
+		<navigator url="/pages/shouye/comment/comment?id={{obj.shop_id}}">查看评价</navigator>
+	</view>
+	<view class="btn" wx:if="{{obj.status== 4 && obj.pay_status != 1}}">
+		<navigator url="../feekback/feekback?id={{obj.id}}&name={{obj.doctor_name}}&img={{obj.portrait}}">去评价</navigator>
+	</view>
+	<view class="btn" wx:if="{{obj.status==4 && obj.pay_status == 1}}">
+		<view bindtap="gopay" style="width:100%;height:100%;" data-order="{{obj.id}}">
+			去支付
+		</view>
+	</view>
+</view>

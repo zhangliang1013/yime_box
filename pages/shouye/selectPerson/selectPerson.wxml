@@ -1,0 +1,90 @@
+<!-- 选择理疗师页面 -->
+<view class="main">
+<view class="jixuan">
+<view class="flex">
+<view>已选项目:</view>
+<view>
+{{xiang_title}}
+</view>
+</view>
+</view>
+<!-- 理疗师循环 -->
+	<view class="row" wx:for="{{mote}}" wx:key='index'>
+		<view class="left">
+			<view class="tou-icon" >
+			<!-- 点击图片进入理疗师详情页 -->
+        <navigator url="../craftsman/craftsman?id={{item.id}}&goods_id={{goods_id}}&comp_id={{comp_id}}&price={{price}}">
+          <image mode="scaleToFill" src="{{item.portrait}}"/>
+        </navigator>
+      </view>
+			<view class="work">
+				<view class="work-bg"></view>
+				<view class="work-zhi" style="width: {{item.exp}}%"></view>
+			</view>
+			<view class="liliaozhi">理疗值 {{item.exp}}</view>
+		</view>
+		<view class="center">
+			<view class="work-name">{{item.name}}</view>
+			<view class="work-price">
+				<view class="price"><text>￥</text>{{price}}</view>
+				<!-- 点击？ -->
+				<view class="wen-icon" bindtap="showModal"><image mode="scaleToFill" src="/images/yiwen.png"/></view>  
+			</view>
+			<!-- 判断理疗师状态 -->
+			<block wx:if="{{item.status==1}}">
+        <view class="biao-icon"><image mode="scaleToFill" src="/images/liliaoxiao.png"/></view>
+        <view class="wait">{{item.wait_text}}</view>
+      </block>
+			<block wx:if="{{item.status==2}}">
+        <view class="biao-icon"><image mode="scaleToFill" src="/images/time_icon.png"/></view>
+       <view class="wait">{{item.wait_text}}</view>
+      </block>
+      <block wx:if="{{item.status==3}}">
+        <view class="biao-icon"><image mode="scaleToFill" src="/images/eat.png"/></view>
+       <view class="wait">{{item.wait_text}}</view>
+      </block>
+			   <block wx:if="{{item.status==4}}">
+        <view class="biao-icon"><image mode="scaleToFill" src="/images/liliaoxiao.png"/></view>
+       <view class="wait">{{item.wait_text}}</view>
+      </block>
+		</view>
+ <!-- 点击取号 -->
+    <form bindsubmit="raginhao" report-submit="true"  data-id="{{item.id}}" data-status="{{item.status}}">
+      <view class="right {{item.status == 1 || item.status == 4?'':'xiuxi'}}"  style="position: relative;">
+        <text>取号</text>
+        <button form-type="submit" style="width:100%;height:100%;position: absolute;top:0;left: 0;opacity: 0"></button>
+      </view>
+    </form>
+	</view>
+	<view class="detail_footer" wx:if="{{mote.length != 0}}">温馨提示：点击理疗师头像可查看详情！</view>
+</view>
+<view class="zhezhao" wx:if="{{hideJin}}">
+<view class="pos">
+	<view class="head">专业标准服务 实惠亲民价格</view>
+	<view class="info">
+		<view class="deschead">1、流水自动，标准服务</view>
+		<view class="desc">微信公众号线上排队、支付、评价,标准流程服务</view>
+	</view>
+	<view class="info">
+		<view class="deschead">2、优化空间，亲民价格</view>
+		<view class="desc">精致空间,小而美的布局风格，优惠价格享受专业</view>
+	</view>
+	<view class="info">
+		<view class="deschead">3、人机结合，专业呵护</view>
+		<view class="desc">高精端理疗设备，专业理疗师，提供纯粹专业体验</view>
+	</view>
+	<view class="info">
+		<view class="deschead">4、联网运营，个性管理</view>
+		<view class="desc">全互联网数据化运营管理，针对性个人治疗方案</view>
+	</view>
+	<view class="know" bindtap="hideModal">我知道了</view>
+</view>
+</view>
+<!-- 如果没有理疗师 -->
+<view wx:if="{{mote.length==0}}" style="font-size:30rpx;text-align: center;color:#999;background: #fff;height:100%">
+  <image src="/images/noData2.png" style="width:400rpx;height:446rpx;margin: 0 auto;padding-top:100rpx" ></image>
+  <view>暂无理疗师</view>
+  <navigator url="/pages/shouye/index/index" hover-class="none" open-type="switchTab">
+    <view class="goBtn">选择其他门店\理疗师</view>
+  </navigator>
+</view>

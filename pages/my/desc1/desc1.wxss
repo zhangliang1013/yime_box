@@ -1,0 +1,111 @@
+/* pages/desc/desc.wxss */
+.topimg{
+	padding: 50rpx 50rpx 20rpx;
+	white-space:nowrap;
+	overflow: hidden;
+}
+.schedule1{
+	height: 16rpx;
+	width: 140rpx;
+	background: #5091FF;
+	border-radius:8rpx;
+	position: absolute;
+}
+.schedule2{
+	height: 16rpx;
+	width: 140rpx;
+	background: #5091FF;
+	border-radius:8rpx;
+	float: left;
+	margin-left: 176rpx;
+	position: absolute;
+}
+
+.schedule3{
+	height: 16rpx;
+	width: 140rpx;
+	background: #D8E5FF;
+	border-radius:8rpx;
+	position: absolute;
+	margin-left: 346rpx;
+}
+
+.schedule4{
+	height: 16rpx;
+	width: 140rpx;
+	background: #D8E5FF;
+	border-radius:8rpx;
+	position: absolute;
+	margin-left: 516rpx;
+}
+
+.schedule5{
+	float: right;
+	margin-top: 20rpx;
+	text-align: center;
+	width: 140rpx;
+}
+.main{
+	background: #f7f7f7;
+}
+.topimg image{
+	width: 100%;
+	height: 100rpx;
+}
+.chead{
+	text-align: center;
+	font-size: 28rpx;
+	font-weight: 500;
+}
+.content{
+	background: #fff;
+	width: 650rpx;
+	margin: 15rpx auto;
+	box-sizing: border-box;
+	padding: 50rpx;
+	border-radius: 20rpx;
+	box-shadow:0px 4px 11px 1px rgba(181,181,181,0.11);
+}
+.row{
+	height: 72rpx;
+	line-height: 72rpx;
+	text-align: center;
+	margin-top: 40rpx;
+	border-radius: 36rpx;
+  font-size: 28rpx;
+	color: #999999;
+	border:1rpx solid #C0C0C0;
+   box-sizing: border-box;
+}
+.row.active{
+	color: #FFFFFF;
+	background: #86AFFF;
+	border : none;
+}
+.next{
+	width: 650rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	background: #5091FF;
+	border-radius: 40rpx;
+	text-align: center;
+
+	color: #fff;
+	margin: 60rpx auto;
+}
+.fixed{
+	position: fixed;
+	bottom: 15rpx;
+	font-size: 22rpx;
+	color: #ccc;
+	width: 100%;
+	text-align: center;
+}
+.fixed button{
+	font-size: 22rpx;
+	color: #ccc; 
+	background: none;
+}
+.fixed button::after {
+      border: none;
+    }

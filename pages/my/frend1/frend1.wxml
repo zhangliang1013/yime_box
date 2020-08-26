@@ -1,0 +1,27 @@
+<!-- 奖励规则页面 -->
+<view class="main">
+	<view class="info">
+		<view class="head">活动简介</view>
+		<view class="info-text">即日起，分享“邀请好友”链接给好友，当他们完成首次理疗体验，你将获得邀请奖励。</view>
+	</view>
+	<view class="info">
+		<view class="head">活动内容</view>
+		<view class="info-text">1、好友打开邀请链接，好友可领取10元优惠券。</view>
+		<view class="info-text">2、当好友完成首次理疗体验后台，你将收到奖励10元。</view>
+	</view>
+	<view class="info">
+		<view class="head">活动说明</view>
+		<view class="info-text">1、邀请好友的次数无上限。</view>
+		<view class="info-text">2、受邀者从未在医么消费过,每位新用户只可领取一次受邀有礼优惠。</view>
+		<view class="info-text">3、受邀者成功领券，并完成首次消费后，您将收到邀请好友奖励。奖励将在48小时内，以优惠券的形式发到你的账号中。</view>
+		<view class="info-text">4、邀请关系以受邀者成功领取优惠的时间为准，邀请关系不可转移或解除。</view>
+		<view class="info-text">5、用户可在[个人中心--我的优惠券]中，查看获得的奖励。</view>
+		<view class="info-text">
+		6、优惠券仅支持在线支付使用，每个订单只能使用一张优惠券。优惠券一次性有效，不可叠加使用，不可兑换现金，不设找零。</view>
+	</view>
+	<view class="info">
+	<view class="head">特别声明</view>
+		<view class="info-text">所有优惠推广活动仅向正当、合法使用医么的用户。每位参与者(含邀请人及被邀请人)的账号、手机号等信息必须是唯一的，任何信息与其他用户重合都不能参加该活动。活动中，一旦发现用户存在利用我们的规则漏洞进行任何形式的作弊行为(包括但不限于通过我们的活动获得不正当的经济利益、关闭作弊账号或与用户相关的所有账户，并保留取消用户后续使用我们医么的权利，必要时会依据严重程度追究用户的法律责任)。</view>
+		<view class="info-text">邀请好友活动那个的最终解释权归医么所有。</view>
+		</view>
+</view>

@@ -1,0 +1,65 @@
+/* pages/auth/auth.wxss */
+
+page {
+  width: 100%;
+}
+
+.logo {
+  margin: 200rpx auto;
+  margin-bottom: 30rpx;
+  overflow: hidden;
+  text-align: center;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+}
+
+.promise {
+  width: 100%;
+  height: calc(100% - 100rpx);
+  text-align: center;
+}
+
+.txt {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  line-height: 50rpx;
+}
+
+.txt .h3 {
+  font-size: 36rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.txt .t {
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+
+.btn {
+  margin-top: 160rpx;
+}
+
+.btn .btn1 {
+  width: 650rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #fff;
+  font-size: 30rpx;
+  background: #5091FF;
+  color: #fff;
+  border-radius: 35rpx;
+}
+
+.bind_phone {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(22, 110, 243, 1);
+}

@@ -1,0 +1,11 @@
+<!-- 取消排号页面 -->
+<view class="main">
+	<view class="reason">取消原因</view>
+	<view class="tip">请选择取消原因，我们会为您持续优化产品体验和服务体验</view>
+	<view class="content w">
+		<view class="row" > 
+			<view class="item {{activeindex==index?'active':''}}" bindtap="selcty" data-index="{{index}}" data-item="{{item}}" wx:for="{{relame}}" style="margin-top:40rpx;" wx:key="index">{{item}}</view>
+		</view>
+	</view> 
+	<view class="next" bindtap="goyew">确认</view>
+</view>

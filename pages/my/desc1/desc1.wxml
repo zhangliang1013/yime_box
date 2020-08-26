@@ -1,0 +1,21 @@
+<!-- 个人档案页面 -->
+<view class="main">
+	<view class="topimg">
+		<view class="schedule1"></view>
+		<view class="schedule2"></view>
+		<view class="schedule3"></view>
+		<view class="schedule4"></view>
+		<view class="schedule5"><text style="font-size: 24rpx; font-weight: 500;color: #FFAB50;">领取红包</text></view>
+	</view>
+	<view class="content">
+		<view class="chead">疼痛的方式</view>
+		<view class="row {{activeindex == index?'active':''}}" wx:for="{{b}}" wx:key="index"  bindtap="selit"  data-item="{{item}}" data-index="{{index}}">
+			{{item}}
+		</view>
+	</view>
+  	<view class="next" bindtap="next">下一步</view>
+	<view class="fixed">
+		<view>如有更多健康需要，可点击</view>
+		<view><button open-type="contact">医么客服</button></view>
+	</view>
+</view>

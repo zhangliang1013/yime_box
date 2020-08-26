@@ -1,0 +1,60 @@
+<!-- 优惠券页面 -->
+<view class="main">
+  <view style="background: #fff;">
+    <view class="input">
+      <view class="input-text">
+      <view class="img" bindtap="handle_sao"> 
+      <image src="/images/saoma.png" mode="widthFix"> </image>
+       </view>
+      <input placeholder="请输入优惠券兑换码" bindinput="keyvalue" value="{{strl}}"/>
+       <view class="btn" bindtap="lgerve" >立即兑换</view>
+     </view>
+    </view>
+  </view>
+  <view class="nocou">
+    <view class="noleft">卡券{{conlist.length}}张</view>
+    <view class="noright">
+      <view class="quanuser"><navigator url="../coupon1/coupon1">券使用说明</navigator></view>
+    </view>
+  </view>
+<!-- 优惠券循环 -->
+  <view class="detail" catchtap="linkeTo" data-index="{{index}}" wx:for="{{conlist}}" wx:key='index' >
+    <view class="row">
+      <view class="row-box">
+        <view class="info">
+          <view class="head">{{item.coupon.title}}</view>
+          		<wxs module="m1">
+									var ToDate = function(number1) {
+										var n = number1 * 1000; //number1 为毫秒 
+										var date = getDate(n);
+										var Y = date.getFullYear() + '-';
+										var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+										var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+										var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+										var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+										return (Y + M + D );
+									}
+									module.exports.ToDate = ToDate;
+								</wxs>
+          <view class="desc">{{m1.ToDate(item.createtime)}}~{{m1.ToDate(item.endtime)}}</view>
+          <view class="desc" wx:if="{{item.coupon.shop_ids ==0}}">适用范围：所有门店通用</view>
+        </view>
+        <view class="money">
+          <view class="qian">￥{{item.coupon.less_price}}</view>
+          <view class="qianshuo">满{{item.coupon.full_price}}元可用</view>
+        </view>
+
+        <view class=" {{item.status!=2 ? 'user':'user_ed'}}" catchtap="mommeng" data-indexd="{{index}}"  wx:if="{{coupon_id != item.id}}">立即使用</view>
+
+        <view class="user_ed" wx:if="{{coupon_id == item.id}}" catchtap="choose_you">已选择</view>
+
+      </view>
+    </view>
+  </view>
+
+  <view class="footer">
+<text bindtap="handle_tiao">  查看历史优惠券</text>
+  </view>
+  <view class="hiscoupon" wx:if="{{conlist.length == 0}}">邀请好友立得优惠劵</view>
+</view>
+

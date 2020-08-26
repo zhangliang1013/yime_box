@@ -1,0 +1,72 @@
+{
+  "pages": [
+    "pages/shouye/index/index",
+    "pages/my/mine/mine",
+    "pages/bill/detail/detail",
+    "pages/my/frend1/frend1",
+    "pages/my/feekback/feekback",
+    "pages/shouye/success/success",
+    "pages/bill/noconsume/noconsume",
+    "pages/bill/feekback/feekback",
+    "pages/bill/feekback1/feekback",
+    "pages/bill/cancell/cancell",
+    "pages/my/coupon/coupon",
+    "pages/my/coupon3/coupon",
+    "pages/my/coupon2/coupon2",
+    "pages/my/coupon1/coupon1",
+    "pages/shouye/detail/detail",
+    "pages/my/frend/frend",
+    "pages/my/desc4/desc4",
+    "pages/my/desc5/desc5",
+    "pages/my/member/member",
+    "pages/my/pondetail/pondetail",
+    "pages/shouye/comment/comment",
+    "pages/shouye/selectPerson/selectPerson",
+    "pages/shouye/bindMobile/bindMobile",
+    "pages/shouye/craftsman/craftsman",
+    "pages/shouye/ditu/ditu",
+    "pages/shouye/lingdu/lingdu",
+    "pages/my/desc/desc",
+    "pages/auth/auth",
+    "pages/my/desc2/desc2",
+    "pages/my/desc1/desc1",
+    "pages/my/agreement/agreement",
+    "pages/programme/programme",
+    "pages/programmeInfo/programmeInfo",
+    "pages/joinapply/joinapply"
+  ],
+  
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#156df2",
+    "list": [
+      {
+        "pagePath": "pages/shouye/index/index",
+        "text": "理疗",
+        "iconPath": "/images/indexno.png",
+        "selectedIconPath": "/images/index.png"
+      },
+      {
+        "pagePath": "pages/bill/noconsume/noconsume",
+        "text": "订单",
+        "iconPath": "/images/order.png",
+        "selectedIconPath": "/images/orderyes.png"
+      },
+      {
+        "pagePath": "pages/my/mine/mine",
+        "text": "我",
+        "iconPath": "/images/mine.png",
+        "selectedIconPath": "/images/mineyes.png"
+      }
+    ]
+  },
+  "requiredBackgroundModes": [
+    "location"
+  ],
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

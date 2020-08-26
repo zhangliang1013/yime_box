@@ -1,0 +1,54 @@
+<!-- 针对方案列表页面 -->
+<view class="wrap" wx:if="{{obleb.length != 0}}">
+  <block wx:for="{{obleb}}" wx:key='id' >
+    <view class="wrap-box">
+      <view class="addTime">{{item.add_time}}</view>
+      <view class="wrap-content">
+
+      <view class="wrap-content-item">
+          <view>反馈时间</view>
+           		<wxs module="m1">
+									var ToDate = function(number1) {
+										var n = number1* 1000; ; //number1 为毫秒 
+										var date = getDate(n);
+										var Y = date.getFullYear() + '-';
+										var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+										var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+										var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+										var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+										return (Y + M + D + ' ' + h + ':' + m);
+									}
+									module.exports.ToDate = ToDate;
+								</wxs>
+          <view class="right">{{m1.ToDate(item.createtime)}}</view>
+        </view>
+
+        <view class="wrap-content-item">
+          <view>理疗师</view>
+          <view class="right">{{item.order_data.doctor_name}}</view>
+        </view>
+
+        <view class="wrap-content-item">
+          <view>服务项目</view>
+          <view class="right">{{item.order_data.services_name}}</view>
+        </view>
+        <navigator url="/pages/programmeInfo/programmeInfo?id={{item.order_id}}" hover-class="none">
+          <view class="fangan">
+          <view class="wrap-content-item2">
+            <view>查看方案</view>
+          </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </block>
+</view>
+<!-- 没数据时 -->
+<block wx:if="{{obleb.length == 0}}">
+  <view class="noData">
+    <image src="/images/noData.png" ></image>
+    <navigator url="/pages/shouye/index/index" hover-class="none" open-type="switchTab">
+      <view class="physioBtn">去按摩</view>
+    </navigator>
+  </view>
+</block>

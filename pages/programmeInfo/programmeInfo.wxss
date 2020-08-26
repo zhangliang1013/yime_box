@@ -1,0 +1,123 @@
+.main {
+  padding: 0 34rpx;
+}
+.head {
+  width: 100%;
+  padding: 0 34prx;
+  display: flex;
+  align-items: center;
+  height: 140rpx;
+  margin-top: 15rpx;
+}
+.head image {
+  width: 102rpx;
+  height: 102rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  vertical-align: top;
+}
+.head text {
+font-size:28rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(51,51,51,1);
+}
+.hui {
+ background-color: #eee;
+  height: 40rpx;
+  width: 750rpx;
+  margin-left: -34rpx;
+}
+.content .row {
+  display:  flex;
+  justify-content: space-between;
+  font-size:28rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(51,51,51,1);
+border-bottom: 1rpx solid #eee;
+}
+.content .row view {
+  padding: 30rpx 0;
+}
+.content .row1 {
+  font-size:28rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(51,51,51,1);
+}
+.content .row1 .liliao{
+  font-size:24rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(51,51,51,1);
+}
+.content .row1 .title {
+  padding: 30rpx 0;
+}
+.zhuan_ .zhuan_title {
+  margin-top: 30rpx;
+  margin-left: -34rpx;
+  /* padding-left: 68rpx; */
+  width: 750rpx;
+  background-color: #eee;
+   padding: 35rpx 0;
+ font-size:30rpx;
+ font-family:Source Han Sans CN;
+ font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.zhuan_ .zhuan_title text {
+  display: inline-block;
+  margin-left: 34rpx;
+}
+.zhuan_ .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 0;
+  font-size:24rpx;
+font-family:Source Han Sans CN;
+font-weight:500;
+color:rgba(51,51,51,1);
+border-bottom: 1rpx solid #eee;
+}
+.zhuan_ .row2{
+  border-bottom: none;
+}
+.zhuan_ .row2 .code {
+  font-size:24rpx;
+font-family:Source Han Sans CN;
+font-weight:500;
+color:rgba(115,168,247,1);
+}
+.shuoming {
+  font-size:18rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(115,167,247,1);
+}
+.sure_zhen {
+  width:650rpx;
+height:70rpx;
+background:linear-gradient(0deg,rgba(21,109,241,1) 0%,rgba(41,127,255,1) 100%);
+border-radius:35rpx;
+margin: 0 auto;
+text-align: center;
+line-height: 70rpx;
+font-size:28rpx;
+font-family:Source Han Sans CN;
+font-weight:500;
+color:rgba(255,255,255,1);
+margin: 50rpx auto;
+}
+.img_{
+  margin-top: 20rpx;
+  display: flex; 
+}
+.img_ image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  margin-right: 6rpx;
+}

@@ -1,0 +1,145 @@
+<!-- 零度介绍页面 -->
+<view class="main">
+	<!-- 返回箭头 -->
+	<view class="commonHead_left">
+		<view class='commonHead_left_back' bindtap='forMoreInfoTap'></view>
+	</view>
+	<view class="title_name">中心店</view>
+	<!-- <view class="title">零度疼痛门诊中心店</view> -->
+	<view class="contain">
+		<image src="/images/menzhen.png" mode="widthFix"></image>
+		<view class="yinye">
+			<view>营业时间： 9:00-18:00</view>
+			<view>详细地址：海珠区江海大道中10号生物工程大厦</view>
+			<view>咨询电话: 4000306688</view>
+		</view>
+	</view>
+	<view class="jieshao">
+   <view class="jie_title">医么BOX的专业依托</view>
+		领健零度门诊部是广东领健医疗投资管理有限公司旗下重点品牌医疗门诊项目。门诊以 “专业疼痛治疗、尊享高端康复品质、贴心舒适服务”为宗旨，并与国内外权威康复中心共同合作，整合国内外权威的疼痛康复专家资源，引进美国、意大利、荷兰、韩国等现代化康复技术、设备与管理模式，结合传统中医康复手段，形成“专科为方向、专业为基础、专注为核心”的中西医结合特色疼痛康复门诊。
+	</view>
+	<view class="banxin">
+		<view class="menzhen_title title"> 门诊治疗服务</view>
+		<view class="menzhen_content">
+			<view class="one">
+				<view class="one_title" bindtap="handleClick">
+					<text>急慢性肌骨疼痛</text>
+					<!-- 指右 -->
+					<image src="/images/you.png" mode="widthFix" wx:if="{{!show}}"> </image>
+					<!-- 指下  -->
+					<image src="/images/xia.png" mode="widthFix" wx:if="{{show}}" class="xia"></image>
+				</view>
+				<!-- 详细介绍 -->
+				<view class="xiangxi" wx:if="{{show}}">
+					颈椎、腰椎、四肢关节等急慢性疼痛，如：腰椎间盘突出、颈椎病、关节炎、腱鞘炎、劳损、脊柱侧弯、肩周炎、不明原因的身体疼痛等。
+				</view>
+			</view>
+
+			<view class="one">
+				<view class="one_title" bindtap="handleClick1">
+					<text>运动损伤康复</text>
+					<!-- 指右 -->
+					<image src="/images/you.png" mode="widthFix" wx:if="{{!show1}}"> </image>
+					<!-- 指下  -->
+					<image src="/images/xia.png" mode="widthFix" wx:if="{{show1}}" class="xia"></image>
+				</view>
+				<!-- 详细介绍 -->
+				<view class="xiangxi" wx:if="{{show1}}">
+					因运动或意外导致的损伤，如：急慢性踝扭伤、跑步膝、膝关节交叉韧带撕裂、撞击伤、踝扭伤，肌肉拉伤，撞击伤，扭挫伤等。
+				</view>
+			</view>
+
+			<view class="one">
+				<view class="one_title" bindtap="handleClick2">
+					<text>骨科术后康复</text>
+					<!-- 指右 -->
+					<image src="/images/you.png" mode="widthFix" wx:if="{{!show2}}"> </image>
+					<!-- 指下  -->
+					<image src="/images/xia.png" mode="widthFix" wx:if="{{show2}}" class="xia"></image>
+				</view>
+				<!-- 详细介绍 -->
+				<view class="xiangxi" wx:if="{{show2}}">
+					骨折、运动损伤术后康复，如：肱骨远端骨折术后肘关节功能障碍/疼痛，膝关节前交叉韧带重建术后膝关节功能障碍，疼痛。
+				</view>
+			</view>
+			<view class="one one1">
+				<view class="one_title" bindtap="handleClick3">
+					<text>产后康复</text>
+					<!-- 指右 -->
+					<image src="/images/you.png" mode="widthFix" wx:if="{{!show3}}"> </image>
+					<!-- 指下  -->
+					<image src="/images/xia.png" mode="widthFix" wx:if="{{show3}}" class="xia"></image>
+				</view>
+				<!-- 详细介绍 -->
+				<view class="xiangxi" wx:if="{{show3}}">
+					产后子宫恢复、盆底功能康复治疗、产后身体塑形、产后下腰痛康复、产后骨盆分离恢复训练、产后呼吸功能恢复、剖腹产后疤痕修复。
+				</view>
+			</view>
+		</view>
+		<view class="zhuanjia_title title">明星专家</view>
+		<view class="zhunajia_list">
+			<!-- 第一个 -->
+			<view class="list_item">
+				<image src="/images/ren1.png" mode="widthFix"></image>
+				<view class="name">肖海仓 </view>
+				<view class="zhiwei">WCPT认证</view>
+				<view class="zhiwei">物理治疗师</view>
+			</view>
+			<view class="list_item">
+				<image src="/images/ren2.png" mode="widthFix"></image>
+				<view class="name">徐振业 </view>
+				<view class="zhiwei">中国速滑国家队</view>
+				<view class="zhiwei">医疗组组长</view>
+			</view>
+			<view class="list_item">
+				<image src="/images/ren3.png" mode="widthFix"></image>
+				<view class="name">张红梅 </view>
+				<view class="zhiwei">特色古法</view>
+				<view class="zhiwei">亚健康调理师</view>
+			</view>
+			<view class="list_item">
+				<image src="/images/ren4.png" mode="widthFix"></image>
+				<view class="name">叶思腾 </view>
+				<view class="zhiwei">首席</view>
+				<view class="zhiwei">骨骼矫正师</view>
+			</view>
+		</view>
+		<view class="renzheng_title title">荣誉证书</view>
+		<view class="ren_list">
+			<!-- 第一个 -->
+			<view>
+				<image src="/images/zs1.png" mode="widthFix"></image>
+			</view>
+			<view>
+				<image src="/images/zs2.png" mode="widthFix"></image>
+			</view>
+			<view>
+				<image src="/images/zs3.png" mode="widthFix"></image>
+			</view>
+			<view>
+				<image src="/images/zs4.png" mode="widthFix"></image>
+			</view>
+			<view>
+				<image src="/images/zs5.png" mode="widthFix"></image>
+			</view>
+			<view>
+				<image src="/images/zs6.png" mode="widthFix"></image>
+			</view>
+			<view>
+				<image src="/images/zs7.png" mode="widthFix"></image>
+			</view>
+			<view>
+				<image src="/images/zs8.png" mode="widthFix"></image>
+			</view>
+			<view>
+				<image src="/images/zs9.png" mode="widthFix"></image>
+			</view>
+			<view>
+				<image src="/images/zs10.png" mode="widthFix"></image>
+			</view>
+			<view>
+				<image src="/images/zs11.png" mode="widthFix"></image>
+			</view>
+		</view>
+	</view>
+</view>

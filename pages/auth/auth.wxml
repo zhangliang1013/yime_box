@@ -1,0 +1,27 @@
+<view class='promise'>
+	<!-- 授权登录 绑定手机号页面 -->
+	<view class='logo'>
+		<open-data type="userAvatarUrl" class="img"></open-data>
+	</view>
+
+	<view class='txt'>
+		<view class='h3'>您好，
+			<open-data type="userNickName"></open-data>
+		</view>
+		<view class='t' wx:if="{{token != ''}}">为了您的账号安全，请授权手机号码</view>
+		<view class='t' wx:if="{{token == ''}}">为了您的账号安全，请授权登录</view>
+	</view>
+	<view class="btn">
+		<button class='btn1' type='primary' open-type="getPhoneNumber" bindgetphonenumber="bindPhone" wx:if="{{token != ''}}">
+			微信手机号一键绑定
+		</button>
+
+		<button class='btn1' type='primary' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{token == ''}}">授权登录</button>
+
+		<navigator url="/pages/shouye/bindMobile/bindMobile" wx:if="{{token != ''}}">
+			<view class="bind_phone">
+				使用其他手机号绑定
+			</view>
+		</navigator>
+	</view>
+</view>

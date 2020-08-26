@@ -1,0 +1,642 @@
+.main {
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.banner .detail {
+	background: #FFFFFF;
+	border-radius: 10rpx;
+	padding: 14rpx 40rpx;
+	color: #FFFFFF;
+}
+
+.detail .left {
+	flex: 1;
+	color: #6a6a6a;
+	position: relative
+}
+
+.detail .right {
+	width: 140rpx;
+	height: 140rpx;
+	margin-top: 20rpx;
+}
+
+.shop {
+	color: #333333;
+	font-size: 34rpx;
+	font-weight: bold;
+	width: 400rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.shipping {
+	font-size: 20rpx;
+	color: #999999;
+	margin-top: 54rpx;
+	margin-left: 4rpx;
+}
+
+.faxing {
+	margin-top: 5rpx;
+	/* display: flex; */
+	height: 30rpx;
+}
+
+.cate-name {
+	width: 160rpx;
+	/* border:1px solid #CCCCCC;
+	border-radius:8px; */
+	margin: -33rpx 510rpx;
+	padding: 0 8rpx;
+	font-size: 24rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(153, 153, 153, 1);
+	display: flex;
+}
+
+.cate-name image {
+	height: 22rpx;
+	width: 22rpx;
+	position: relative;
+	left: -10rpx;
+	top: 6rpx;
+}
+
+.shop-adderess {
+	font-size: 20rpx;
+	font-weight: 400;
+	margin-top: -138rpx;
+	color: rgba(51, 51, 51, 1);
+	position: absolute;
+	left: 151rpx;
+	width: 510rpx;
+	display: flex;
+	justify-content: space-between;
+}
+
+.coupon {
+	margin-top: 10rpx;
+	margin-left: 4rpx;
+	display: flex;
+	align-items: center
+}
+
+.coupon-type {
+	background: linear-gradient(0deg, rgba(10, 101, 241, 1) 0%, rgba(40, 74, 242, 1) 100%);
+	font-size: 14rpx;
+	height: 24rpx;
+	line-height: 24rpx;
+	padding: 0 2rpx;
+	color: #FFFFFF;
+	border-radius: 10rpx 0 0 0;
+}
+
+.coupon-content {
+	margin-left: 8rpx;
+	font-size: 20rpx;
+	color: #333333;
+}
+
+.index {
+	font-size: 20rpx;
+}
+
+.index image {
+	height: 140rpx;
+	width: 140rpx;
+	border-radius: 20rpx;
+}
+
+.shop-adderess {
+	display: flex;
+	justify-content: space-between;
+}
+
+.dizhi-icon {
+	/* margin-left: 80rpx; */
+	display: inline-block;
+	/* float: right; */
+
+	margin-top: 26rpx;
+}
+
+.dizhi-icon image {
+	width: 20rpx;
+	height: 31rpx;
+}
+
+.activity {
+	margin-top: 10rpx;
+	display: flex;
+	font-size: 22rpx;
+	/* position: absolute; */
+	/* bottom: 0; */
+}
+
+.activity-icon image {
+	width: 30rpx;
+	height: 30rpx;
+	margin: 5rpx 0 0 10rpx;
+}
+
+.huodong {
+	color: #333333;
+	margin-top: 50rpx;
+}
+
+.huohead {
+	display: flex;
+	align-items: center;
+}
+
+.huotext {
+	border: 1rpx solid #333;
+	border-radius: 5rpx;
+	font-size: 28rpx;
+	padding: 0 10rpx;
+	display: inline-block;
+}
+
+.shouqi-icon image {
+	width: 50rpx;
+	height: 50rpx;
+}
+
+.huodongtext {
+	margin: 30rpx 0 0 30rpx;
+	font-size: 26rpx;
+	font-weight: bold;
+}
+
+.huodesc {
+	display: flex;
+	font-size: 22rpx;
+	padding: 20rpx 0 0 30rpx;
+}
+
+.youicon {
+	background: #81bf24;
+	color: #fff;
+	width: 30rpx;
+	height: 30rpx;
+	line-height: 30rpx;
+	text-align: center;
+	font-size: 20rpx;
+	margin-right: 15rpx;
+}
+
+.jiangicon {
+	background: #d77979;
+	color: #fff;
+	width: 30rpx;
+	height: 30rpx;
+	line-height: 30rpx;
+	text-align: center;
+	font-size: 20rpx;
+	margin-right: 15rpx;
+}
+
+.faxingshi {
+	margin-top: 40rpx;
+}
+
+.faxinghead {
+	font-size: 30rpx;
+	font-weight: bold;
+	padding: 0 42rpx;
+	font-family: Source Han Sans CN;
+	color: rgba(51, 51, 51, 1);
+}
+
+.stores-service {
+	width: 690rpx;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 0px 1px 7px 0px rgba(19, 93, 241, 0.21);
+	border-radius: 15px;
+	margin: 40rpx 30rpx;
+}
+
+.row-item {
+	display: flex;
+	padding: 30rpx 0;
+	align-items: center;
+	/* border-top: 2rpx solid #e6e6e6; */
+}
+
+.item-left {
+	width: 150rpx;
+}
+
+.faxing-img image {
+	width: 120rpx;
+	height: 120rpx;
+	margin: 0 auto;
+	border-radius: 50%;
+}
+
+.item-center {
+	flex: 1;
+	margin: 0 10rpx;
+	color: #bbbbbb;
+}
+
+.item-center-text {
+	margin-left: 10rpx;
+	border-left-color: #244EF2;
+	border-left-style: solid;
+	border-left-width: 6rpx;
+}
+
+.faxing-name {
+	font-size: 28rpx;
+	font-weight: bold;
+	color: #333333;
+	margin: 0 10rpx;
+}
+
+.detail_wen {
+	display: inline-block;
+	width: 20rpx;
+	height: 20rpx;
+	border: 2rpx solid rgba(21, 109, 242, 1);
+	border-radius: 50%;
+	line-height: 20rpx;
+	text-align: center;
+	font-size: 18rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(21, 109, 242, 1);
+	position: relative;
+	top: -17rpx;
+	margin-left: 3rpx;
+}
+
+.faxing-info {
+	font-size: 20rpx;
+	margin-top: 30rpx;
+	margin-left: 20rpx;
+	color: #999999
+}
+
+.item-right {
+	display: flex;
+	color: #244EF2;
+	font-size: 40rpx;
+	font-weight: 500;
+}
+
+.item-text {
+	margin-top: 10rpx;
+}
+
+.item-text text {
+	font-size: 30rpx;
+}
+
+.next-icon image {
+	width: 40rpx;
+	height: 75rpx;
+	margin-right: 10rpx;
+}
+
+.getcoupon {
+	background: #fff;
+	border-radius: 10rpx;
+	padding: 30rpx 25rpx;
+	margin-top: 30rpx;
+	position: relative;
+	box-shadow: 2rpx 2rpx 20rpx #d8d8d8;
+
+}
+
+.couponlist {
+	display: flex;
+	/* padding-left: 18rpx; */
+	align-items: center;
+}
+
+.coupon-text {
+	font-size: 20rpx;
+	color: #81bf24;
+
+}
+
+.coupon-icon image {
+	position: absolute;
+	right: 30rpx;
+	top: 35rpx;
+	width: 50rpx;
+	height: 80rpx;
+}
+
+.service {
+	margin-top: 20rpx;
+}
+
+.servieo {
+	background: #fff;
+	border-radius: 10rpx;
+	padding: 30rpx 25rpx;
+	margin-top: 30rpx;
+}
+
+.servce-info {
+	display: flex;
+	border-bottom: 1rpx solid #EEEEEE;
+	width: 580rpx;
+	margin: 40rpx auto;
+	font-size: 36rpx;
+	margin-bottom: 24rpx;
+	font-weight: 500;
+	color: #768095;
+}
+
+.point {
+	flex: 1;
+	text-align: center;
+	padding: 10rpx 0;
+	margin: 20rpx 0;
+}
+
+.shuline {
+	width: 3rpx;
+	height: 72rpx;
+	margin-top: 45rpx;
+	background: #EEEEEE;
+}
+
+.point-text {
+	/* height: 72rpx; */
+	margin-bottom: 30rpx;
+	font-size: 36rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 500;
+	color: rgba(118, 128, 149, 1);
+}
+
+.point-name {
+	font-size: 20rpx;
+	color: #999999;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(153, 153, 153, 1);
+}
+
+.service-item {
+	display: flex;
+	font-size: 32rpx;
+	margin: 30rpx 74rpx 0;
+}
+
+.service-left {
+	width: 72rpx;
+}
+
+.service-left image {
+	width: 72rpx;
+	height: 72rpx;
+	border-radius: 50%;
+}
+
+.service-you {
+	margin-left: 20rpx;
+	flex: 1;
+}
+
+.service-top {
+	overflow: hidden;
+	color: #999999;
+}
+
+.serv-name {
+	float: left;
+}
+
+.serv-time {
+	float: right;
+}
+
+.service-name {
+	color: #333333;
+	font-size: 22rpx;
+	font-weight: 500
+}
+
+.service-time {
+	font-size: 20rpx;
+	color: #999999;
+	font-weight: 400;
+}
+
+.service-person {
+	font-size: 22rpx;
+	margin-top: 8rpx;
+}
+
+.service-info {
+	margin: 30rpx 0;
+	color: #333333;
+	font-size: 24rpx
+}
+
+.service-level {
+	display: flex;
+	margin-top: 10rpx;
+	position: absolute;
+	right: 72rpx;
+}
+
+.service-level image {
+	width: 30rpx;
+	height: 30rpx;
+	text-align: right
+}
+
+.service-pic {
+	padding: 15rpx 0;
+	display: flex;
+
+}
+
+.service-pic image {
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 10rpx;
+	margin-right: 10rpx;
+}
+
+.more {
+	text-align: right;
+	font-size: 24rpx;
+	font-weight: 400;
+	color: #9DBEFF;
+	margin: 20rpx 40rpx;
+}
+
+.shopinfo {
+	background: #fff;
+	border-radius: 10rpx;
+	/* padding: 30rpx 25rpx; */
+	margin-top: 30rpx;
+	padding-bottom: 24rpx;
+	margin-bottom: 20rpx;
+	box-shadow: 2rpx 2rpx 20rpx #d8d8d8;
+}
+
+.shoptext-text {
+	font-size: 24rpx;
+	color: #4e4e4e;
+	padding-left: 25rpx;
+}
+
+.shopfen-icon {
+	width: 100%;
+	margin-top: 10rpx;
+}
+
+.shopfen-icon image {
+	width: 100%;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	/* justify-content: space-between; */
+	margin: 20rpx 0;
+	/* width: 578rpx; */
+}
+
+.serlist-text {
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 22rpx;
+}
+
+.serlist-text:nth-child(2n-1) {
+	margin-right: 140rpx;
+	margin-left: 65rpx;
+}
+
+.serlisr-text {
+	display: flex;
+}
+
+.shopser-icon {
+	width: 72rpx;
+	height: 72rpx
+}
+
+.shuoming {
+	flex: 1;
+	padding-left: 20rpx;
+	font-size: 24rpx;
+	margin-top: 15rpx;
+}
+
+.row image {
+	width: 80rpx;
+	height: 80rpx;
+}
+
+button:after {
+	border: none;
+}
+
+.kefu {
+	margin: 0;
+	background-color: #fff;
+}
+
+.kefu button {
+	font-size: 18rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(21, 109, 242, 1);
+	background-color: #fff;
+}
+
+.chart-info {
+	/* height: 500rpx; */
+	margin-top: 24rpx;
+	box-sizing: border-box
+}
+
+.canvas {
+	/* width: 370px; */
+	width: 100%;
+	height: 500rpx;
+}
+
+.wumode {
+	width: 500rpx;
+	margin: 10rpx auto;
+	font-size: 30rpx;
+}
+
+.zhe_hui {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 154%;
+	background: rgba(77, 72, 66, .4);
+}
+
+.zhe_hui .content {
+	box-sizing: border-box;
+	position: relative;
+	z-index: 999;
+	width: 530rpx;
+	height: 580rpx;
+	background: rgba(255, 255, 255, 1);
+	border-radius: 20rpx;
+	margin: 246rpx auto;
+	padding: 88rpx 40rpx;
+}
+.zhe_hui .content1 {
+	padding-top: 45rpx;
+}
+.zhe_hui .content .title {
+	font-size: 30rpx;
+	font-family: Source Han Sans CN;
+	font-weight: bold;
+	color: rgba(51, 51, 51, 1);
+	margin-bottom: 30rpx;
+}
+
+.zhe_hui .content .row {
+	font-size: 26rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(51, 51, 51, 1);
+	line-height: 26rpx;
+}
+
+.zhe_hui .content .footer {
+	color: #156DF2;
+	font-size: 20rpx;
+	margin-top: 8rpx;
+	/* line-height: 42rpx; */
+}
+
+.cha_guan {
+	width: 20rpx;
+	height: 20rpx;
+	position: absolute;
+	top: 25rpx;
+	right: 25rpx;
+}
+
+.cha_guan image {
+	width: 100%;
+	height: 100%;
+}

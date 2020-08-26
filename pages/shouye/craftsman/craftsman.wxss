@@ -1,0 +1,520 @@
+.main {
+	font-size: 24rpx;
+	background: #F8F8F8;
+	height: 100%;
+}
+
+.banner {
+	width: 100%;
+	height: 400rpx;
+	background: linear-gradient(0deg, rgba(10, 101, 241, 1) 23%, rgba(40, 74, 242, 1) 100%);
+}
+
+.commonHead_left {
+	width: 125rpx;
+	height: 175rpx;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 999;
+}
+
+.commonHead_left_back {
+	width: 100%;
+	height: 100%;
+	background-image: url(data:image/png;base64,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);
+	background-size: 50rpx 50rpx;
+	background-repeat: no-repeat;
+	background-position: center;
+	/* background: #ccc; */
+}
+
+.title_name {
+	position: absolute;
+	height: 175rpx;
+	line-height: 175rpx;
+	z-index: 999;
+	left: 307rpx;
+	top: 0;
+	font-size: 46rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 1);
+
+}
+
+.worker {
+	overflow: hidden;
+	/* padding: 201rpx 120rpx 0 60rpx; */
+	padding-top: 171rpx;
+	margin-left: 55rpx;
+}
+
+.workleft {
+	display: flex;
+	float: left;
+}
+
+.work-img image {
+	width: 180rpx;
+	height: 180rpx;
+	border-radius: 50%;
+}
+
+.work-name {
+	position: relative;
+	font-weight: bold;
+	margin: 0 0 0 40rpx;
+	font-size: 32rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 1);
+}
+
+.dengji {
+	position: absolute;
+	top: -45rpx;
+	right: -45rpx;
+	font-size: 20rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(254, 254, 254, 1);
+}
+
+.workright {
+	float: right;
+	position: absolute;
+	margin: 57rpx 206rpx 0;
+}
+
+.work-info {
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	margin-top: 6rpx;
+}
+
+.work-wen {
+	/* float: right; */
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.work-wen image {
+	margin: -15rpx 0 0 10rpx;
+	width: 18rpx;
+	height: 18rpx;
+}
+
+.work-money {
+	/* float: right; */
+	font-size: 40rpx;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	font-family: Source Han Sans CN;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 1);
+}
+
+.work-money text {
+	font-size: 40rpx;
+}
+
+.work-hui {
+	overflow: hidden;
+	position: relative;
+	font-size: 18rpx;
+	color: #fff;
+}
+
+.work-member {
+	float: right;
+}
+
+.work-member image {
+	width: 160rpx;
+	height: 35rpx;
+}
+
+.work-membertext {
+	position: absolute;
+	left: 30rpx;
+	top: 5rpx;
+}
+
+.work-memberright {
+	position: absolute;
+	right: 15rpx;
+	top: 5rpx;
+}
+
+.work-nian {
+	margin-top: 20rpx;
+	overflow: hidden;
+}
+
+.work-jing {
+	display: inline-block;
+	padding: 0 30rpx;
+	color: #fff;
+	font-size: 32rpx;
+	background: #272822;
+}
+
+.workadd {
+	display: flex;
+	margin-top: -20rpx;
+}
+
+.workaddleft {
+	flex: 1;
+	display: flex;
+	margin: -35rpx 0 0 260rpx;
+}
+
+.workaddright {
+	width: 135rpx;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-top: -26rpx;
+}
+
+.workadd {
+	color: #FFFFFF;
+}
+
+.work-gongicon {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.work-gongicon image {
+	width: 37rpx;
+	height: 37rpx;
+}
+
+.work-addicon image {
+	width: 20rpx;
+	height: 30rpx;
+}
+
+.work-juli {
+	margin-left: 15rpx;
+}
+
+.faxingshi {
+	background: #fff;
+	border-radius: 10rpx;
+	padding: 30rpx 30rpx 0;
+	margin: 30rpx 25rpx 0;
+}
+
+.faxinghead {
+	padding-bottom: 10rpx;
+	font-size: 28rpx;
+	font-family: Source Han Sans CN;
+	font-weight: bold;
+	color: rgba(51, 51, 51, 1);
+}
+
+.jingyan {
+	padding: 30rpx 0 100rpx;
+}
+
+.jywork {
+	font-size: 30rpx;
+	padding: 10rpx 20rpx;
+	background: #333333;
+	display: inline-block;
+	color: #fff;
+}
+
+.line {
+	width: 1rpx;
+	height: 60rpx;
+	margin-left: 25rpx;
+	background: #e6e6e6;
+}
+
+.miaos {
+	position: relative;
+}
+
+.miaoline {
+	width: 1rpx;
+	height: 100rpx;
+	margin-left: 25rpx;
+	background: #e6e6e6;
+}
+
+.misoinfo {
+	position: absolute;
+	left: 70rpx;
+	top: -10rpx;
+	color: #333333;
+}
+
+.miswork {
+	margin-top: 15rpx;
+	font-size: 25rpx;
+	color: #cccccc;
+}
+
+.service {
+	/* padding: 60rpx; */
+	padding: 20rpx 121rpx 0 74rpx;
+	margin-top: 30rpx;
+}
+
+.servce-info {
+	display: flex;
+	width: 610rpx;
+	margin: 0 auto;
+	border-bottom: 1rpx solid #e6e6e6;
+}
+
+.point {
+	flex: 1;
+	text-align: center;
+	margin: 56rpx 0 28rpx;
+}
+
+.shuline {
+	width: 2rpx;
+	height: 82rpx;
+	margin-top: 55rpx;
+	background: #DDDDDD;
+}
+
+.point-text {
+	font-size: 40rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 500;
+	color: rgba(51, 51, 51, 1);
+}
+
+.point-name {
+	margin-top: 25rpx;
+	font-size: 20rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(153, 153, 153, 1);
+}
+
+.service-item {
+	display: flex;
+	padding-top: 40rpx;
+	padding-left: 10rpx;
+	font-size: 32rpx;
+}
+
+.service-left {
+	width: 100rpx;
+}
+
+.service-left image {
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 50%;
+}
+
+.service-you {
+	flex: 1;
+}
+
+.service-top {
+	overflow: hidden;
+	color: #C6C6C6;
+	font-size: 22rpx;
+}
+
+.serv-name {
+	float: left;
+}
+
+.serv-time {
+	float: right;
+}
+
+/* .service-center{
+	
+} */
+.service-name {
+	margin-top: 6rpx;
+	font-size: 24rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(51, 51, 51, 1);
+}
+
+.service-person {
+	margin-top: 10rpx;
+	font-size: 20rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(51, 51, 51, 1);
+}
+
+.service-info {
+	margin-top: 40rpx;
+	margin-left: -90rpx;
+	font-size: 20rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(51, 51, 51, 1);
+}
+
+.service-level {
+	display: flex;
+	margin-top: 12rpx;
+	float: right;
+}
+
+.service-level image {
+	width: 21rpx;
+	height: 20rpx;
+	margin-left: 8rpx;
+}
+
+.service-pic {
+	padding: 30rpx 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.service-pic image {
+	width: 100rpx;
+	height: 100rpx;
+	/* margin-left: 12rpx; */
+	margin-right: 12rpx;
+}
+
+.more {
+	text-align: right;
+	color: #254DF2;
+	padding-top: 26rpx;
+	font-size: 20rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(115, 168, 247, 1);
+}
+
+.kefu {
+	display: flex;
+	position: fixed;
+	bottom: 0;
+	height: 90rpx;
+	width: 100%;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 3px 4px 21px 3px rgba(21, 109, 242, 0.29);
+	align-items: center;
+	/* padding-left: 73rpx; */
+}
+
+.nowait {
+	margin-left: 73rpx;
+	font-size: 40rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 500;
+	color: rgba(255, 79, 79, 1);
+}
+
+.quhao {
+	width: 240rpx;
+	height: 90rpx;
+	line-height: 100rpx;
+	text-align: center;
+	color: #FFFFFF;
+	font-style: 30rpx;
+	position: absolute;
+	right: 0;
+	background: linear-gradient(0deg, rgba(21, 109, 242, 1) 0%, rgba(42, 127, 255, 1) 100%);
+	border-radius: 80rpx 0px 0px 0px;
+	font-size: 28rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 1);
+}
+
+.xiuxi {
+	width: 180rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	text-align: center;
+	background: #cccccc;
+	color: #fff;
+	border-radius: 10rpx;
+}
+
+.contain_ {
+	padding-left: 74rpx;
+	padding-right: 121rpx;
+	margin-bottom: 90rpx;
+}
+
+.congye_title {
+	margin-top: 40rpx;
+	margin-bottom: 20rpx;
+	font-size: 28rpx;
+	font-family: Source Han Sans CN;
+	font-weight: bold;
+	color: rgba(51, 51, 51, 1);
+}
+
+.experience_list {
+	display: flex;
+}
+
+.experience_list .left {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.experience_list .left .img1 {
+	width: 20rpx;
+	height: 20rpx;
+}
+
+.experience_list .left .img2 {
+	height: 140rpx;
+	width: 2rpx;
+	margin-left: -1rpx;
+
+}
+
+.experience_list .right {
+	margin-left: 28rpx;
+}
+
+.experience_list .right .date_title {
+	/* margin-top: 12rpx; */
+	font-size: 24rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(51, 51, 51, 1);
+}
+
+.experience_list .right .content {
+	margin-top: 12rpx;
+	font-size: 20rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(102, 102, 102, 1);
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+}
+
+.wait_code {
+	margin-top: 10rpx;
+	font-size: 20rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(255, 189, 85, 1);
+}

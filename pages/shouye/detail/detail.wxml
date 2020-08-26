@@ -1,0 +1,218 @@
+<!-- 店家详情页面 -->
+<view class="main">
+	<view class="banner">
+		<view class="detail">
+			<view class="left">
+				<view class="shop">{{detaile.name}}</view>
+				<view class="cate-name">
+					<!-- 无人 -->
+					<image src="/images/wuren.png" mode="scaleToFill" wx:if="{{!detaile.underway}}"> </image>
+					<!-- 有人 -->
+					<image src="/images/youren.png" mode="scaleToFill" wx:if="{{detaile.underway}}"> </image>
+					{{detaile.underway?detaile.underway:' 0'}}人正在治疗
+				</view>
+				<view class="shipping">营业时间 {{detaile.business_hours}}</view>
+				<view class="right">
+					<view class="index">
+						<image mode="scaleToFill" src="{{detaile.smallimage}}" />
+					</view>
+				</view>
+				<!-- 调用地图 -->
+				<view class="shop-adderess" catchtap="penmap">
+					<view class="dizhi">
+						<text>详细地址：</text>
+						<view>{{detaile.address}}</view>
+					</view>
+					<view class="dizhi-icon">
+						<image mode="scaleToFill" src="/images/shop_add.png" />
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="faxingshi">
+		<view class="faxinghead">请选择服务</view>
+		<!-- 服务循环 -->
+		<view class="stores-service">
+			<view bindtap="handle_router" data-goods_id="{{id}}" data-comp_id="{{item.id}}" data-title="{{item.name}}" data-price="{{item.price}}" wx:for="{{detaile.services_items}}" wx:key='index'>
+				<view class="row-item">
+					<view class="item-center">
+						<view class="item-center-text">
+							<view class="faxing-name">
+								{{item.name}}
+								<!-- 服务介绍 -->
+								<text class="detail_wen" catchtap="handle_one1" data-content="{{item.id}}" data-name="{{item.name}}" wx:if="{{item.content}}">?</text>
+							</view>
+						</view>
+						<view class="faxing-info">{{item.desc}}</view>
+					</view>
+					<view class="item-right">
+						<!-- <view class="item-text"><text>￥</text>{{item.price}}</view> -->
+						<view class="next-icon">
+							<image mode="aspectFit" src="/images/next.png" />
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="wumode" wx:if="{{detaile.services_items.length == 0}}"> 该店铺暂无项目,请选择其他店铺！</view>
+	</view>
+	<view class="service">
+		<view class="faxinghead">店铺服务评价</view>
+		<navigator url="../comment/comment?id={{id}}&type=1" hover-class="none">
+			<view class='servce-info'>
+				<view class="point">
+					<view class="point-text">{{detaile.score}}</view>
+					<view class="point-name">评分</view>
+				</view>
+				<view class="shuline"></view>
+				<view class="point">
+					<view class="point-text">{{detaile.discuss}}</view>
+					<view class="point-name">评论数</view>
+				</view>
+			</view>
+		</navigator>
+		<!-- 评论内容 -->
+		<block wx:if="{{detaile.discuss_data}}">
+			<view class="service-item">
+				<view class="service-left">
+					<view class="service-img" wx:if="{{detaile.discuss_data[0].user_info.avatar}}">
+						<image mode="aspectFit" src="{{detaile.discuss_data[0].user_info.avatar}}" />
+					</view>
+					<view class="service-img" wx:if="{{!detaile.discuss_data[0].user_info.avatar}}">
+						<image mode="aspectFit" src="/images/kong.png" />
+					</view>
+				</view>
+				<view class="service-you">
+					<view class="service-top">
+						<view class="serv-name">
+							<view class="service-name">{{detaile.discuss_data[0].user_info.nickname}}</view>
+							<view class="service-person">理疗师：{{detaile.discuss_data[0].doctor_name}}</view>
+						</view>
+					</view>
+					<!-- 评论类容 -->
+					<view class="service-center">
+						<view class="service-info">
+							{{detaile.discuss_data[0].content}}
+						</view>
+						<!-- 评论图片 -->
+						<view class="service-pic" wx:if="{{detaile.discuss_data[0].images.length!= 0}}">
+							<image mode="scaleToFill" src="{{item}}" wx:key='index' wx:for="{{detaile.discuss_data[0].images}}" />
+						</view>
+					</view>
+				</view>
+			</view>
+		</block>
+		<block wx:else>
+			<view style="text-align: center;margin-top: 40rpx;color: #999;font-size: 24rpx">暂无评论~</view>
+		</block>
+		<view class="more" wx:if="{{detaile.discuss_data}}">
+			<navigator url="../comment/comment?id={{id}}&type=1" hover-class="none">
+				查看全部评论
+			</navigator>
+		</view>
+	</view>
+	<view class="serlist">
+		<view class="faxinghead">服务标准</view>
+		<view class="serlist">
+			<view class="row">
+
+				<view class="serlist-text">
+					<view class="shopser-icon">
+						<image mode="scaleToFill" src="/images/fuwu1.png" />
+					</view>
+					<view class="shuoming">标准服务流程</view>
+				</view>
+				<view class="serlist-text">
+					<view class="shopser-icon">
+						<image mode="scaleToFill" src="/images/wufu2.png" />
+					</view>
+					<view class="shuoming">专业理疗仪器</view>
+				</view>
+				<view class="serlist-text">
+					<view class="shopser-icon">
+						<image mode="scaleToFill" src="/images/fuwu3.png" />
+					</view>
+					<view class="shuoming">标准员工培训</view>
+				</view>
+				<view class="serlist-text">
+					<view class="shopser-icon">
+						<image mode="scaleToFill" src="/images/wufu4.png" />
+					</view>
+					<view class="shuoming">绝不推销办卡</view>
+				</view>
+				<view class="serlist-text">
+					<view class="shopser-icon">
+						<image mode="scaleToFill" src="/images/wufu5.png" />
+					</view>
+					<view class="shuoming">标准质量控制</view>
+				</view>
+				<view class="serlist-text">
+					<view class="shopser-icon">
+						<image mode="scaleToFill" src="/images/wufu6.png" />
+					</view>
+					<view class="shuoming">个性理疗方案</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="kefu">
+		<button open-type="contact">
+			点击勾搭客服小医 （工作日 {{detaile.business_hours}}）
+		</button></view>
+</view>
+
+<!-- 提神醒脑服务介绍部分 -->
+<view class="zhe_hui" wx:if="{{zhe_one}}">
+	<view class="content" wx:if="{{content_id == 16}}">
+		<view class="cha_guan" bindtap="handle_one">
+			<image src="/images/cha.png" mode="scaleToFill"></image>
+		</view>
+		<view class="title">{{name_}}</view>
+		<view class="row">- 护理部位： 后脑+后颈部 </view>
+		<view class="row">- 护理时间： 15分钟 </view>
+		<view class="row">- 护理功效： 减轻脑压力、缓解头晕头</view>
+		<view class="row"> 痛、疏通颈部经络 </view>
+		<view class="row">- 护理流程：</view>
+		<view class="row">1、专业手法按摩12分钟</view>
+		<view class="row">2、远红外线灯理疗3分钟</view>
+		<view class="footer">*建议：配合小项目（刮痧或拔罐）操作效果更佳！</view>
+	</view>
+
+	<view class="content content1" wx:if="{{content_id == 17}}">
+		<view class="cha_guan" bindtap="handle_one">
+			<image src="/images/cha.png" mode="scaleToFill"></image>
+		</view>
+		<view class="title">{{name_}}</view>
+		<view class="row">- 护理部位： 后脑+后颈部+肩周</view>
+		<view class="row">- 护理时间： 20分钟</view>
+		<view class="row">- 护理功效： 减轻脑压力、缓解头晕头</view>
+		<view class="row">痛、改善失眠多梦、疏通颈部经络、放</view>
+		<view class="row">松肩周僵硬的肌肉、降低肩胛骨黏连</view>
+		<view class="row">- 护理流程：</view>
+		<view class="row">1、专业筋膜枪放松肌肉3分钟</view>
+		<view class="row">2、专业手法按摩12分钟</view>
+		<view class="row">3、远红外线灯理疗5分钟</view>
+		<view class="footer">*建议：配合小项目（刮痧或拔罐）操作效果更佳！</view>
+	</view>
+
+	<view class="content content1" wx:if="{{content_id == 18}}">
+		<view class="cha_guan" bindtap="handle_one">
+			<image src="/images/cha.png" mode="scaleToFill"></image>
+		</view>
+		<view class="title">{{name_}}</view>
+		<view class="row">-护理部位： 后脑+后颈+肩周+全背</view>
+		<view class="row">-护理时间： 30分钟</view>
+		<view class="row">-护理功效： 减轻脑压力、缓解头晕头</view>
+		<view class="row">痛、失眠多梦、胸闷气短、疏通颈部、</view>
+		<view class="row">背部经络、散结散淤、减轻肩</view>
+		<view class="row">- 护理流程：</view>
+		<view class="row">1、专业筋膜枪放松肌肉3分钟</view>
+		<view class="row">2、专业手法按摩12分钟</view>
+		<view class="row">3、专业真空走罐10分钟</view>
+		<view class="row">4、远红外线灯理疗5分钟</view>
+	</view>
+</view>
+
+
+

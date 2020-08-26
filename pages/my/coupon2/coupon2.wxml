@@ -1,0 +1,38 @@
+<!-- 点击优惠券详情页面 -->
+		<wxs module="m1">
+									var ToDate = function(number1) {
+										var n = number1 * 1000; //number1 为毫秒 
+										var date = getDate(n);
+										var Y = date.getFullYear() + '-';
+										var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+										var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+										var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+										var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+										return (Y + M + D );
+									}
+									module.exports.ToDate = ToDate;
+								</wxs>
+<view class="main">
+	<view class="content">
+		<view class="row">
+			<view class="right">券名称</view>
+			<view class="zhi">{{lenove.coupon.title}}</view>
+		</view>
+		<view class="row">
+			<view class="right">优惠金额</view>
+			<view class="zhi">￥{{lenove.coupon.less_price}}(满{{lenove.coupon.full_price}}元可用)</view>
+		</view>
+		<view class="row">
+			<view class="right">可用时间</view>
+			<view class="zhi">{{m1.ToDate(lenove.createtime)}}~{{m1.ToDate(lenove.endtime)}}</view>
+		</view>
+		<view class="row">
+			<view class="right">服务项目</view>
+			<view class="zhi" wx:if="{{lenove.coupon.services_ids == 0}}">所有项目通用</view>
+		</view>
+		<view class="row">
+			<view class="right">门店范围</view>
+			<view class="zhi" wx:if="{{lenove.coupon.shop_ids == 0}}">所有项目通用</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,192 @@
+/* pages/desc/desc.wxss */
+.rloes {
+	padding: 0 30rpx;
+}
+
+.main {
+	padding: 30rpx 0;
+}
+
+.bg {
+	width: 500rpx;
+	margin: 0 auto;
+}
+
+.bg image {
+	width: 100%;
+}
+
+.kaitong {
+	width: 400rpx;
+	margin: 30rpx auto;
+	text-align: center;
+	padding: 20rpx 0;
+	background: #156DF2;
+	color: #fff;
+	border-radius: 10rpx;
+}
+
+.rule {
+	text-align: center;
+	font-size: 28rpx;
+	margin: 40rpx auto;
+}
+
+.rule text {
+	color: #156DF2;
+}
+
+.super {
+	padding: 20rpx 40rpx 0;
+}
+
+.head {
+	padding: 30rpx 0;
+	font-size: 40rpx;
+	color: #1d1c21;
+	font-weight: bold;
+}
+
+.row {
+	display: flex;
+	margin-top: 15rpx;
+}
+
+.memicon image {
+	width: 70rpx;
+}
+
+.memshuo {
+	font-size: 35rpx;
+	margin: 15rpx 0 0 20rpx;
+}
+
+.supershuo {
+	padding: 0 40rpx;
+}
+
+.rowshuo {
+	display: flex;
+}
+
+.memiconq image {
+	width: 50rpx;
+}
+
+.memshuoww {
+	font-weight: bold;
+	margin-left: 15rpx;
+}
+
+.tipshuo {
+	font-size: 30rpx;
+	color: #9f9f9f;
+	margin-top: 15rpx;
+}
+
+.desc {
+	font-size: 30rpx;
+	color: #5a5a5a;
+	margin-top: 15rpx;
+}
+
+.bang-top {
+	width: 480rpx;
+	height: 700rpx;
+	box-shadow: 2rpx 2rpx 20rpx #e6e6e6;
+	margin: 30rpx auto;
+	border-radius: 30rpx;
+	position: relative;
+}
+
+.bang-num {
+	font-size: 300rpx;
+	font-weight: bold;
+	color: #156DF2;
+}
+
+.bang-info {
+	text-align: center;
+	font-size: 42rpx;
+	font-weight: bold;
+	color: #156DF2;
+}
+
+.bang-user {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	bottom: 30rpx;
+	left: 20rpx;
+}
+
+.bang-center {
+	width: 440rpx;
+	height: 70rpx;
+	line-height: 65rpx;
+	margin: 50rpx auto 20rpx;
+	background: #dbdbdb;
+	border-radius: 40rpx;
+	text-align: center;
+	position: relative;
+}
+
+.bang-btn {
+	width: 380rpx;
+	height: 85rpx;
+	line-height: 85rpx;
+	border-radius: 10rpx;
+	background: #156DF2;
+	margin: 50rpx auto 20rpx;
+	text-align: center;
+}
+
+.bang-btn>text {
+	color: #fff;
+	font-size: 30rpx
+}
+
+.agreement {
+	text-align: center;
+	font-size: 20rpx;
+	margin-top: 10rpx;
+}
+
+.agreement-text-two {
+	color: #156DF2;
+}
+
+.contain {
+	margin-top: 50rpx;
+}
+
+.bang-center .jiao {
+	height: 0rpx;
+	width: 0rpx;
+	border-top: 17rpx solid rgba(219, 219, 219, 1);
+	border-left: 9rpx solid transparent;
+	border-right: 9rpx solid transparent;
+	position: absolute;
+	/* bottom: 20rpx; */
+	bottom: -16rpx;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.contain view {
+	font-size: 22rpx;
+	font-family: PingFang SC;
+	font-weight: 500;
+	color: rgba(51, 51, 51, 1);
+	line-height: 43rpx;
+}
+
+.dao_date {
+	width: 100%;
+	text-align: center;
+	font-size: 28rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 500;
+	color: rgba(47, 125, 243, 1);
+	margin-bottom: -15rpx;
+}

@@ -1,0 +1,46 @@
+<!-- 评价页面 -->
+<view class="main">
+	<view class="info">
+		<view class="main_info">
+			<!-- 头像 -->
+			<image src="{{head_img}}" mode="widthFix"> </image>
+			<text>{{name}}</text>
+			<view class="xing">
+				<view wx:for="{{xiao}}" wx:key="index" bindtap="xuan_xing" data-index="{{index}}">
+					<block wx:if="{{item.status}}">
+						<image src="/images/xuan.png" mode="aspectFit"></image>
+					</block>
+					<block wx:else>
+						<image src="/images/noxuan.png" mode="aspectFit"></image>
+					</block>
+				</view>
+			</view>
+		</view>
+
+  <!-- 服务 -->
+		<view class="list">
+			<view class="list-row">
+				<block wx:for="{{icdels}}" wx:key="index">
+					<view class="list-item {{item.isSelect ? 'active':''}}" data-index="{{index}}" bindtap="selectApply">{{item.title}}</view>
+				</block>
+			</view>
+		</view>
+		<view class="content">
+			<view class="section">
+				<textarea maxlength="200" bindinput="getEvarv" placeholder="快写下您的评论吧!" />
+				</view>
+      <view class="pic">
+        <view class="pic-item">
+          <image mode="scaleToFill" src="/images/shangtu.png" catchtap="selctPhone" />
+          <image mode="scaleToFill" src="{{item}}" wx:for="{{prell}}" wx:key="index" wx:if="{{prell.length!=0}}" data-index="{{index}}" bindtap="preimg"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <view class="kongzhe"></view> -->
+<form bindsubmit="{{submin?'setPlain':''}}" report-submit='true'>
+  <view class="btn">
+    <button class="anniu" formType="submit">提交</button>
+  </view>
+</form>

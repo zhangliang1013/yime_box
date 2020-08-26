@@ -1,0 +1,73 @@
+<!-- pages/my/pondetail/pondetail.wxml -->
+<!-- 个人详情页面 -->
+<view class="main">
+<view class="header" catchtap="selctPhone">
+<view class="row1" >
+  <image src="{{avatar ? avatar :'../../../images/kong.png' }}"> </image>
+  <text>头像</text>
+</view>
+ <image src="/images/next.png" mode="widthFix"></image>
+</view>
+
+<view class="row">
+<view class="left">
+昵称
+</view>
+<view class="right">
+<input bindblur="handleInput1" value="{{nickname}}" class="input1"></input>
+<image src="/images/next.png" mode="widthFix"></image>
+</view>
+</view>
+
+<view class="row">
+<view class="left">
+手机号码
+</view>
+<view class="right">
+{{mobile}}
+</view>
+</view>
+
+
+<view class="row">
+<view class="left">
+真实姓名
+</view>
+<view class="right">
+<input bindblur="handleInput3" value="{{fullname}}" class="input2"></input>
+<image src="/images/next.png" mode="widthFix"></image>
+</view>
+</view>
+
+<view class="row">
+<view class="left">
+邮箱
+</view>
+<view class="right">
+{{email}}
+<!-- <input bindblur="handleInput4" value="" class="input3"></input> -->
+<!-- <image src="/images/next.png" mode="widthFix"></image> -->
+</view>
+</view>
+
+<view class="row">
+<view class="left">
+生日
+</view>
+<view class="right">
+
+  <picker mode="date" value="{{birthday}}"  bindchange="bindDateChange">
+    <view class="picker">
+  {{birthday}}
+    </view>
+  </picker>
+
+<!-- <input bindblur="handleInput5" value="{{input_value5}}"></input> -->
+<image src="/images/next.png" mode="widthFix"></image>
+</view>
+</view>
+
+<view class="btn" catchtap="handle_save">
+保存更改
+</view>
+</view>

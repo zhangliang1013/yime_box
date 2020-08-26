@@ -1,0 +1,68 @@
+<!-- 申请加盟页面 -->
+<view class="main">
+	<view class="title1">
+		基础信息
+	</view>
+	<view class="contain">
+		<view class="hezi">
+			<view class="left">联系人名字</view>
+			<view class="{{value1 == '' ? 'right xingming':'right xingming1'}}">
+				<input value="{{value1}}" bindinput="handle_value1" placeholder="请输入您的姓名" placeholder-style="color:rgba(115,168,247,1)"></input>
+			</view>
+		</view>
+		<view class="hezi">
+			<view class="left">手机号码</view>
+			<view  class="{{value2 == '' ? 'right shouji':'right shouji1'}}">
+				<input value="{{value2}}" bindinput="handle_value2" placeholder="请输入您的手机号码" placeholder-style="color:rgba(115,168,247,1)"></input>
+			</view>
+		</view>
+		<view class="hezi">
+			<view class="left">邮箱</view>
+			<view class="{{value3 == '' ? 'right youxiang':'right youxiang1'}}">
+				<input value="{{value3}}" bindinput="handle_value3" placeholder="请输入您的邮箱" placeholder-style="color:rgba(115,168,247,1)"></input>
+			</view>
+		</view>
+	</view>
+
+	<view class="title">
+		加盟详情
+	</view>
+	<view class="contain">
+    <picker mode="region" bindchange="bindRegionChange" value="" custom-item="{{customItem}}">
+		<view class="hezi">
+			<view class="left">您的意向合作地区</view>
+			<view class="right1">
+				<text>{{arae}}</text>
+				<image src="/images/you.png" mode="widthFix" class="you"> </image>
+			</view>
+		</view>
+		</picker>
+
+ <picker bindchange="bindPickerChange" value="{{item}}" range="{{array}}">
+		<view class="hezi">
+			<view class="left">您在哪个时间段方便接电话</view>
+			<view class="right1">
+				<text>{{time_}}</text>
+				<image src="/images/you.png" mode="widthFix" class="you"> </image>
+			</view>
+		</view>
+</picker>
+
+
+		<view class="hezi">
+			<view class="left jingyan">是否有按摩行业/相关经验</view>
+			<view class="right1">
+				<!-- 开关 -->
+				<switch checked="{{switchChecked}}" bindchange="switch1Change" color="#73a8f7" style="zoom:0.8"/>
+			</view>
+		</view>
+	</view>
+	<view class="title">了解更多</view>
+	<view class="textarea">
+		<textarea value="{{textarea}}" bindinput="handleText" placeholder="请填写您想了解的其他问题" placeholder-style="color:#fff">
+  </textarea>
+	</view>
+	<view class="submit" bindtap="handle_submit">
+		提交
+	</view>
+</view>

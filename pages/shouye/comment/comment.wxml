@@ -1,0 +1,68 @@
+<!-- 评论页面 -->
+<view class="main">
+	<view class="cate">
+		<view class="cate-item {{activeindex == index? 'active':''}}" wx:for="{{evaarr}}" data-type="{{item.type}}" data-index="{{index}}" wx:key='id' bindtap="seleall">{{item.name}}</view>
+	</view>
+	<view class="content" wx:if="{{pinarr.length!=0}}">
+		<view class="head">最新评论</view>
+		<view class="list">
+			<!-- 循环评论列表 -->
+			<view class="row" wx:for="{{pinarr}}" wx:key='index' wx:for-index="index">
+				<view class="service-item">
+					<view class="service-left">
+						<view class="service-img" wx:if="{{item.user_info.avatar}}">
+							<image mode="aspectFit" src="{{item.user_info.avatar}}" />
+						</view>
+						<view class="service-img" wx:if="{{!item.user_info.avatar}}">
+							<image mode="aspectFit" src="/images/kong.png" />
+						</view>
+					</view>
+					<view class="service-you">
+						<view class="service-top">
+							<view class="serv-name">
+								<view class="service-name">{{item.user_info.nickname}}</view>
+								<view class="service-person">理疗师：{{item.doctor_name}}</view>
+							</view>
+							<view class="serv-time">
+								<wxs module="m1">
+									var ToDate = function(number1) {
+										var n = number1 * 1000; //number1 为毫秒 
+										var date = getDate(n);
+										var Y = date.getFullYear() + '-';
+										var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+										var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+										var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+										var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+										return (Y + M + D + " " + h + ":" + m);
+									}
+									module.exports.ToDate = ToDate;
+								</wxs>
+								<view class="service-time">{{m1.ToDate(item.createtime)}}</view>
+								<view class="service-level">
+									<image mode="aspectFit" src="/images/star.png" wx:for="{{item.star}}" wx:key='index' />
+								</view>
+							</view>
+						</view>
+						<view class="service-center">
+							<view class="service-info">
+								{{item.content}}
+							</view>
+							<!-- 有图的评论 -->
+							<view class="service-pic" wx:if="{{item.images.length != 0}}">
+								<image mode="scaleToFill" src="{{item}}" wx:for="{{item.images}}" wx:for-index="indexs" wx:key='indexs' catchtap="previewImage" data-url="{{item}}" data-index="{{index}}" />
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 没有评论的展示 -->
+<view style="font-size:30rpx;text-align: center;margin-top: 100rpx;color:#999;background: #fff;" wx:if="{{noData}}">
+	<image src="/images/noData2.png" style="width:400rpx;height:446rpx;margin: 0 auto"></image>
+	<view>暂无服务评价</view>
+	<navigator url="/pages/shouye/index/index" hover-class="none" open-type="switchTab">
+		<view class="goBtn">去理疗</view>
+	</navigator>
+</view>

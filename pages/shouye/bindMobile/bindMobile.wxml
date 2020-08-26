@@ -1,0 +1,35 @@
+<!-- 绑定手机号码页面 -->
+<view class="main">
+	<view class="head">
+		<image src="/images/shouquan_ing.png" mode="widthFix"></image>
+	</view>
+	<view class="w">
+		<view class="row">
+			<view class="left">
+			<text>+86</text>
+      <image src="/images/xia.png" mode="widthFix"></image>
+			</view>
+			<view class="right">
+				<input bindinput="getphone" placeholder="请输入手机号码" placeholder-style="font-size:24rpx;color:rgba(190,190,190,1);"></input>
+			</view>
+		</view>
+		<view class="row1">
+			<view class="left">
+				<input bindinput="getmima" placeholder="请输入验证码" placeholder-style="font-size:24rpx;color:rgba(190,190,190,1);"></input>
+			</view>
+			<view class="right" bindtap="{{ishi? 'bindphobe':''}}">
+				{{ishi?"获取验证码":time+'秒'}}
+			</view> 
+		</view>
+	</view>
+	<view class="foot">
+		<view bindtap="bindOfcose" class="login_btn">登录医么</view>
+		<view class="text">
+		<text>	点击登录医么BOX，即显示已阅读并同意</text>
+				《<navigator class="tiao" url="/pages/my/agreement/agreement" hover-class="none">医么隐私政策</navigator>》
+		</view>
+		<view class="text text1">
+			《<navigator class="tiao" url="/pages/my/agreement/agreement" hover-class="none">医么BOX小程序服务指南</navigator>》         
+		</view>
+	</view>
+</view>

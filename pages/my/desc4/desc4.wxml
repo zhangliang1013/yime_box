@@ -1,0 +1,33 @@
+<!-- 个人档案详情页面 -->
+<view class="main">
+  <view class="content">
+    <view class="row">
+      <view class="left">
+        <image src="/images/per1.jpg.png"  mode="scaleToFill"/>
+      </view>
+      <view class="right">疼痛位置</view>
+      <view class="zhi">{{tp.part}}</view>
+    </view>
+    <view class="row" >
+      <view class="left">
+        <image src="/images/per2.png"  class="img1" mode="scaleToFill"/>
+      </view>
+      <view class="right">疼痛方式</view>
+      <view class="zhi">{{tp.mode}}</view>
+    </view>
+    <view class="row" >
+      <view class="left">
+        <image src="/images/per3.png"  class="img2" mode="scaleToFill"/>
+      </view>
+      <view class="right">疼痛时间</view>
+      <view class="zhi">{{tp.duration}}</view>
+    </view>
+    <view class="row">
+      <view class="left">
+        <image src="/images/per4.jpg"  class="img3" mode="scaleToFill"/>
+      </view>
+      <text class="right" decode="{{true}}">既往史&emsp;</text>
+      <view class="zhi">{{tp.past}}</view>
+    </view>
+  </view>
+</view>

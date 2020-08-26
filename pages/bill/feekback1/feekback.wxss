@@ -1,0 +1,211 @@
+.main {
+	font-size: 35rpx;
+	height: 100%;
+	/* background: #F8F8F8; */
+	position: absolute;
+}
+
+.info {
+	margin: 20rpx 0 0;
+}
+
+.cate {
+	display: flex;
+	background: #fff;
+	justify-content: space-between;
+	padding: 20rpx 50rpx;
+}
+
+.dj-title {
+	font-size: 30rpx;
+	padding: 0 0 40rpx 42rpx;
+}
+
+.item {
+	text-align: center;
+	flex: 1;
+}
+
+.level-pic {
+	margin: 10rpx 0;
+}
+
+.level-pic image {
+	width: 60rpx;
+	height: 60rpx;
+	margin: 0 auto;
+}
+
+.service-level {
+	margin: 0 auto;
+	display: flex;
+}
+
+.service-level image {
+	width: 30rpx;
+	height: 30rpx;
+}
+
+.list {
+	background: #fff;
+	padding: 30rpx 15rpx 30rpx;
+
+}
+
+.list-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-left: 46rpx;
+}
+
+.list-item {
+	width: 200rpx;
+	line-height: 64rpx;
+	border-radius: 36rpx;
+	margin-right: 15rpx;
+	font-size: 24rpx;
+	margin-bottom: 30rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: rgba(102, 102, 102, 1);
+	height: 70rpx;
+	border: 1px solid rgba(153, 153, 153, 1);
+	box-sizing: border-box;
+}
+
+.list-item.active {
+	color: rgba(255, 255, 255, 1);
+	/* border: 2rpx solid #86AFFF; */
+	background: linear-gradient(0deg, rgba(21, 109, 242, 1) 0%, rgba(42, 127, 255, 1) 100%);
+	border: none;
+}
+
+.content {
+	width: 660rpx;
+	height: 240rpx;
+	background: rgba(187, 214, 255, 1);
+	border-radius: 20rpx;
+	padding: 30rpx 0 0 40rpx;
+	margin: 0 auto;
+}
+
+.section textarea {
+	width: 100%;
+	height: 160rpx;
+	font-size: 24rpx;
+	font-family: Source Han Sans CN;
+	font-weight: bold;
+	color: rgba(255, 255, 255, 1);
+}
+
+.pic {
+	/* margin-top: 10rpx; */
+	display: flex;
+	padding-bottom: 30rpx;
+}
+
+.pic-item {
+	margin-right: 15rpx;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.pic-item image {
+	/* margin-top: 14rpx; */
+	width: 60rpx;
+	height: 60rpx;
+	margin-right: 10rpx;
+	/* margin-left: 10rpx; */
+}
+
+.btn {
+	position: fixed;
+	bottom: 120rpx;
+	width: 100%;
+	background: #fff;
+}
+
+.anniu {
+	background: linear-gradient(0deg, #2a7fff 0%, #156df2 100%);
+	color: #fff;
+	margin: 20rpx 30rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	border-radius: 40rpx;
+	text-align: center;
+	font-size: 35rpx;
+}
+
+/* .anniu :hover {
+	background: linear-gradient(0deg, rgba(10, 101, 241, 1) 0%, rgba(40, 74, 242, 1) 100%);
+} */
+
+.xing-xi image {
+	width: 24rpx;
+	height: 22rpx;
+}
+
+.dbood-img image {
+	width: 61rpx;
+	height: 61rpx;
+}
+
+.dbood-tle {
+	font-size: 26rpx;
+	color: #666;
+	padding: 8rpx 0;
+}
+
+.xing-xi {
+	display: flex;
+}
+
+.dbood {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 25%;
+	box-sizing: border-box;
+}
+
+.main_info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.main_info image {
+	width: 180rpx;
+	height: 180rpx;
+	border-radius: 50%;
+	margin-bottom: 20rpx;
+	margin-top: 40rpx;
+}
+
+.main_info text {
+	font-size: 30rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(51, 51, 51, 1);
+}
+
+.main .xing {
+	width: 400rpx;
+	margin-top: -6rpx;
+	display: flex;
+	justify-content: space-around;
+}
+
+.main .xing image {
+	height: 46rpx;
+	width: 48rpx;
+}
+.tishi {
+	font-size:24rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(116,168,248,1);
+margin-left: 45rpx;
+}

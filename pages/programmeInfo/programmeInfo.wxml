@@ -1,0 +1,86 @@
+<!-- 针对方案详情页面 -->
+ <view class="main">
+  <view class="head">
+  <image src="{{detail.doctor_portrait}}"> </image>
+  <text>{{detail.doctor_name}}</text>
+  </view>
+   <view class="content">
+   <view class="row">
+   <view>反馈时间</view>
+   	<wxs module="m1">
+									var ToDate = function(number1) {
+										var n = number1 * 1000; //number1 为毫秒 
+										var date = getDate(n);
+										var Y = date.getFullYear() + '-';
+										var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+										var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+										var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+										var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+										return (Y + M + D + ' ' + h + ':' + m);
+									}
+									module.exports.ToDate = ToDate;
+								</wxs>
+   <view wx:if="{{detail.treatment.createtime}}">{{m1.ToDate(detail.treatment.createtime)}}</view>
+   <view wx:if="{{!detail.treatment.createtime}}"></view>
+   </view>
+   <view class="row">
+   <view>服务项目</view>
+   <view>{{detail.services_name}}</view>
+   </view>
+   <view class="row1">
+   <view class="title">理疗师方案</view>
+   <view class="liliao">
+    {{detail.treatment.content}}
+   </view>
+   <view class="img_" wx:for="{{detail.treatment.images}}" wx:key="index">
+     <image src="{{item}}"  mode="widthFix" ></image>
+   </view>
+  </view>
+  </view>
+
+<!-- 转诊推荐 -->
+<view class="zhuan_" wx:if="{{detail.treatment.type == 1}}">
+<view class="zhuan_title"><text> 转诊推荐</text></view>
+<view class="row">
+<view>转诊门诊</view>
+<view>{{detail.treatment.hospital}}</view>
+</view>
+
+<view class="row">
+<view>推荐科目</view>
+<view>{{detail.treatment.diseases}}</view>
+</view>
+
+<view class="row">
+<view>转诊号</view>
+<view>{{detail.treatment.number}}</view>
+</view>
+
+<view class="row row2">
+<view>预约电话</view>
+<view>{{detail.treatment.mobile}}</view>
+</view>
+</view>
+
+
+<view class="row row2" wx:if="{{detail.treatment.status == 2 }}">
+<view>转诊状态</view>
+<view class="code">已同意</view>
+</view>
+
+<view class="row row2" wx:if="{{detail.treatment.status == 3}}">
+<view>转诊状态</view>
+<view class="code">已接收</view>
+</view>
+
+<view class="row row2" wx:if="{{detail.treatment.status == 4}}">
+<view>转诊状态</view>
+<view class="code">已完成治疗</view>
+</view>
+<view wx:if="{{detail.treatment.status == 1}}">
+<view class="shuoming">
+*您可凭借转诊号到门诊中心店就诊，会有相对应的优惠，专家会根据您的问题推荐相关的治疗方式以及方案。
+</view>
+<view class="sure_zhen" bindtap="handle_zhen">同意转诊</view>
+</view>
+ </view>

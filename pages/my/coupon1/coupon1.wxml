@@ -1,0 +1,41 @@
+<!-- 优惠券说明页面 -->
+<view class="main">
+  <view class="row">
+    <view class="top">
+      Q1: 如何获得优惠券?
+    </view>
+    <view class="bottom">
+      通过抢微信好友分享得优惠券、参与医么推出的活动等方式，可获得优惠券。
+    </view>
+  </view>
+ <view class="row">
+    <view class="top">
+      Q2: 如何使用优惠券?
+    </view>
+    <view class="bottom">
+      优惠券仅支持在线支付使用。每个订单只能使用一张优惠券。优惠券一次性有效，不可叠加使用，不可兑换现金，不设找零。优惠券如有使用金额门槛限制条件，订单需在满足条件后，才可使用优惠券。
+    </view>
+  </view>
+  <view class="row">
+    <view class="top">
+      Q3: 优惠券什么时候生效?什么时候到期?
+    </view>
+    <view class="bottom">
+      优惠券的生效时间内，皆为有效，以取号成功的时间，作为服务的开始时间，并用来判断优惠券是否适用于该笔订单。当达到优惠券的失效日期当天的23：59，优惠券自动失效。
+    </view>
+  </view>
+  <view class="row">
+    <view class="top">
+      Q4: 兑换码和口令如何兑换?
+    </view>
+    <view class="bottom">
+      在“个人中心>我的优惠券>兑换”,填写兑换码或口令，进行兑换。
+    </view>
+  </view>
+</view>
+<view class="pos">
+  <view class="info">在法律允许的范围内,医么对优惠券拥有解释权</view>
+  <view class="kefu">如有疑问,请联系医么客服</view>
+</view> 
+
+

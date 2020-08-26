@@ -1,0 +1,164 @@
+/* pages/desc/desc.wxss */
+.topimg{
+	padding: 50rpx 50rpx 20rpx;
+	white-space:nowrap;
+	overflow: hidden;
+}
+.schedule1{
+	height: 16rpx;
+	width: 140rpx;
+	background: #5091FF;
+	border-radius:8rpx;
+	position: absolute;
+}
+.schedule2{
+	height: 16rpx;
+	width: 140rpx;
+	background: #5091FF;
+	border-radius:8rpx;
+	float: left;
+	margin-left: 176rpx;
+	position: absolute;
+}
+
+.schedule3{
+	height: 16rpx;
+	width: 140rpx;
+	background: #5091FF;
+	border-radius:8rpx;
+	position: absolute;
+	margin-left: 346rpx;
+}
+
+.schedule4{
+	height: 16rpx;
+	width: 140rpx;
+	background: #D8E5FF;
+	border-radius:8rpx;
+	position: absolute;
+	margin-left: 516rpx;
+}
+
+.schedule5{
+	float: right;
+	margin-top: 20rpx;
+	text-align: center;
+	width: 140rpx;
+}
+.main{
+	background: #f7f7f7;
+}
+.topimg image{
+	width: 100%;
+	height: 100rpx;
+}
+.chead{
+	text-align: center;
+  font-size: 28rpx;
+}
+.content{
+	background: #fff;
+	width: 650rpx;
+	margin: 15rpx auto;
+	box-sizing: border-box;
+	padding: 50rpx;
+	border-radius: 20rpx;
+	/* box-shadow:0px 4px 11px 1px rgba(181,181,181,0.11); */
+}
+.row{
+	height: 72rpx;
+	line-height: 72rpx;
+	text-align: center;
+	margin-top: 40rpx;
+  font-size: 30rpx;
+	border-radius: 36rpx;
+	color: #999999;
+	border:2rpx solid #C0C0C0;
+	box-sizing: border-box;
+}
+.row.active{
+	color: #FFFFFF;
+	background: #86AFFF;
+	font-size:28rpx;
+	border: none;
+}
+.chead.two{
+	margin-top: 60rpx;
+}
+.next{
+	width: 650rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+  font-size: 30rpx;
+	background: #5091FF;
+	border-radius: 40rpx;
+	text-align: center;
+	color: #fff;
+	margin: 60rpx auto;
+}
+.fixed{
+	font-size: 22rpx;
+	color: #ccc;
+	width: 100%;
+	text-align: center;
+}
+.fixed button{
+	font-size: 22rpx;
+	color: #ccc; 
+	background: none;
+}
+.fixed button::after {
+      border: none;
+      
+    }
+
+.zhezhao{
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(153,153,153,0.9);
+  
+	z-index: 100;
+}
+.pos{
+	z-index: 1000;
+	position: fixed;
+	left: 50%;
+	top: 150rpx;
+	width: 600rpx;
+	margin-left: -300rpx;
+}
+.hongbao image{
+	width:420rpx;
+	height:520rpx;
+	margin: 0 auto;
+}
+.phone{
+	margin-top: 10rpx;
+	width:580rpx;
+	height:100rpx;
+	background:rgba(255,255,255,1);
+	border-radius:50rpx;
+}
+.phone input{
+	width: 100%;
+	height: 100rpx;
+  font-size: 30rpx;
+	line-height: 100rpx;
+	text-align: center;
+	background: #fff; 
+	color: #999999;
+}
+.btnan{
+	width: 100%;
+  font-size: 30rpx;
+	height: 90rpx;
+	line-height: 90rpx;
+	background: #FBBE60; 
+	color: #FFFFFF;
+	margin-top: 40rpx;
+	text-align: center;
+	border-radius:25px;
+}

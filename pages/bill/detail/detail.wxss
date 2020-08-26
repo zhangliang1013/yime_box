@@ -1,0 +1,145 @@
+/**index.wxss**/
+.main {
+	padding-top: 40rpx;
+	width: 750rpx;
+	height: 100%;
+	background: rgba(244, 244, 244, 1);
+}
+
+.page {
+	margin: 0 auto;
+	/* margin-top: 100rpx; */
+	width: 660rpx;
+	/* height:560rpx; */
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 0rpx 10rpx 27rpx 0rpx rgba(19, 93, 241, 0.21);
+	border-radius: 30rpx;
+	padding: 0 20rpx;
+	/* padding-top: 50rpx; */
+}
+
+.zhuzhi {
+	padding: 20rpx 0;
+	overflow: hidden;
+	font-size: 24rpx;
+	/* border-bottom: 1rpx solid #e6e6e6; */
+	color: #333;
+}
+
+.zhuleft {
+	float: left;
+	display: flex;
+}
+
+.zhiliaonext {
+	margin-left: 10rpx;
+}
+
+.zhiliaonext image {
+	width: 40rpx;
+	height: 40rpx;
+}
+
+.zhiliaoadd {
+	margin-right: 10rpx;
+}
+
+.zhiliaoadd image {
+	width: 30rpx;
+	height: 40rpx;
+}
+
+.workeradd.other {
+	color: rgba(21, 109, 242, 1);
+}
+
+.workeradd.huise {
+	color: #adadad;
+}
+
+.zhuright {
+	float: right;
+	display: flex;
+}
+
+.workeradd .heji {
+	font-size: 24rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(153, 153, 153, 1);
+}
+
+.workeradd text.small {
+	display: inline-block;
+	margin-left: 10rpx;
+	font-size: 24rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(255, 79, 79, 1);
+}
+
+.desc {
+	margin-top: 40rpx;
+	padding: 0 30rpx 30rpx;
+}
+
+.desc .row {
+	margin-top: 20rpx;
+	font-size: 20rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(51, 51, 51, 1);
+}
+
+.btn {
+	/* position: fixed;
+	bottom: 50rpx;
+	left: 5%; */
+	text-align: center;
+	width: 650rpx;
+	height: 70rpx;
+	background: linear-gradient(0deg, rgba(253, 207, 135, 1) 0%, rgba(249, 187, 87, 1) 100%);
+	border-radius: 35rpx;
+	line-height: 70rpx;
+	font-size: 28rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 1);
+	margin: 20rpx auto;
+}
+
+.btn button {
+	position: fixed;
+	bottom: 50rpx;
+	left: 5%;
+	width: 90%;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	background: linear-gradient(0deg, rgba(10, 101, 241, 1) 0%, rgba(40, 74, 242, 1) 100%);
+	border-radius: 30rpx;
+	color: #fff;
+}
+
+.use_youhui {
+	display: flex;
+	align-items: center;
+}
+
+.use_youhui image {
+	height: 24rpx;
+	width: 13rpx;
+	margin-left: 10rpx;
+}
+
+.use_youhui text {
+	font-size: 24rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(115, 168, 247, 1);
+}
+
+.youhui_border {
+	padding-bottom: 30rpx;
+	border-bottom: 1rpx solid rgba(238, 238, 238, 1);
+}

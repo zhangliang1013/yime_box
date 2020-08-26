@@ -1,0 +1,330 @@
+<!-- 订单列表页 -->
+<view class="main">
+	<!-- tab栏切换 -->
+	<view class="nav">
+		<view class="nav-item {{activeindex==index?'active':''}}" wx:for="{{activlen}}" wx:key='id' data-index="{{index}}" bindtap="getIndex">{{item.name}}</view>
+	</view>
+	<view class="hui" wx:if="{{orderObj.length !==0}}">
+		<!-- 列表循环 -->
+		<view class="list" wx:for="{{orderObj}}" wx:key='index'>
+			<view class="page">
+				<view class="queing">
+					<view class="queicon">
+						<image mode="scaleToFill" src="/images/queueing.png" />
+					</view>
+					<view class="queuetext" wx:if="{{item.status==0}}">已取消</view>
+					<view class="queuetext" wx:if="{{item.status==1}}">排队中</view>
+					<view class="queuetext" wx:if="{{item.status==2}}">治疗中</view>
+					<view class="queuetext" wx:if="{{item.status==3}}">已完成</view>
+					<view class="queuetext" wx:if="{{item.status==5}}">已评价</view>
+					<view class="queuetext" wx:if="{{item.status==4}}">已完成</view>
+					<view class="queuetext" wx:if="{{item.status==6}}">已取消</view>
+				</view>
+
+				<!-- 待消费排队状态 -->
+				<view class="pao" wx:if="{{item.status == 1}}">
+					<view class="info">
+						<view class="info-item">
+							<view class="info-title">{{item.line_number}}</view>
+							<view class="info-no">排队号码</view>
+						</view>
+						<view class="info-item">
+							<view class="info-title">{{item.underway}}</view>
+							<view class="info-no">前面人数/人</view>
+						</view>
+						<view class="info-item">
+							<view class="info-title">{{item.waiting_time}}分钟</view>
+							<view class="info-no">预计等待/分钟</view>
+						</view>
+					</view>
+				</view>
+				<view class="msg" bindtap="godetail" data-id="{{item.id}}">
+					<view class="zhuzhi">
+						<view class="zhuleft">
+							<view class="workeradd huise">门店</view>
+						</view>
+						<view class="zhuright">
+							<view class="workeradd mendian">{{item.shop_name}}</view>
+						</view>
+					</view>
+					<view class="zhuzhi">
+						<view class="zhuleft">
+							<view class="workeradd huise">理疗师</view>
+						</view>
+						<view class="zhuright">
+							<view class="workeradd other">{{item.doctor_name}}</view>
+						</view>
+					</view>
+					<view class="zhuzhi">
+						<view class="zhuleft">
+							<view class="workeradd huise">服务项目</view>
+						</view>
+						<view class="zhuright">
+							<view class="workeradd">{{item.services_name}}</view>
+						</view>
+					</view>
+					<!-- 附加项目名称 -->
+					<view class="zhuzhi" wx:if="{{item.accessorialservice_name}}">
+						<view class="zhuleft">
+							<view class="workeradd huise">附加项目</view>
+						</view>
+						<view class="zhuright">
+							<view class="workeradd">{{item.accessorialservice_name}}</view>
+						</view>
+					</view>
+					<!-- 项目价格 -->
+					<view class="zhuzhi">
+						<view class="zhuleft">
+							<view class="workeradd huise">价格</view>
+						</view>
+						<view class="zhuright">
+							<view class="workeradd">￥{{item.total}}</view>
+						</view>
+					</view>
+
+					<!-- bang优惠展示 -->
+					<view class="zhuzhi" wx:if="{{item.bang_price != '0.00'  &&  !couponPrice}}">
+						<view class="zhuleft">
+							<view class="workeradd huise">bang优惠</view>
+						</view>
+						<view class="zhuright">
+							<view class="workeradd">-￥{{item.bang_price}}</view>
+						</view>
+					</view>
+				</view>
+				<!-- 优惠券 -->
+				<!-- 订单待支付 -->
+				<view class="zhuzhi" wx:if="{{item.status == 4 && item.pay_status == 1}}">
+					<view class="zhuleft">
+						<view class="workeradd huise">优惠</view>
+					</view>
+					<view class="zhuright youhui">
+
+
+						<!-- 默认最优 -->
+						<view class="workeradd other youhui_q" wx:if="{{!couponPrice && yes_coupon && item.coupon.less_price}}">
+							<text> {{item.coupon.less_price}}元优惠券</text>
+							<image src="/images/shan_chu.png" mode="widthFix" catchtap="handle_quxiao"></image>
+						</view>
+
+						<!-- 选择的优惠卷 -->
+						<view class="workeradd other youhui_q" wx:if="{{couponPrice}}">
+							<text> {{couponPrice}}元优惠券</text>
+							<image src="/images/shan_chu.png" mode="widthFix" catchtap="handle_quxiao"></image>
+						</view>
+
+						<!-- 没有优惠券 -->
+						<navigator url="/pages/my/coupon/coupon?price={{item.total}}" hover-class="none" hover-stop-propagation="true" class="zhuright youhui" wx:if="{{!couponPrice && yes_coupon && !item.coupon.less_price}}">
+							<view class="workeradd other">暂无优惠</view>
+							<image src="/images/you.png" mode="widthFix" class="go_coupon"></image>
+						</navigator>
+
+						<!-- 去优惠券页面(默认最优) -->
+						<navigator url="/pages/my/coupon/coupon?price={{item.total}}&coupon={{item.coupon.id}}" hover-class="none" hover-stop-propagation="true" class="zhuright youhui" wx:if="{{!couponPrice && yes_coupon && item.coupon.less_price}}">
+							<view class="workeradd other" wx:if="{{!couponPrice && !yes_coupon}}">请选择优惠券</view>
+							<image src="/images/you.png" mode="widthFix" class="go_coupon"></image>
+						</navigator>
+
+						<!-- 去优惠卷(没优惠卷或者自己选的) -->
+						<navigator url="/pages/my/coupon/coupon?price={{item.total}}" hover-class="none" hover-stop-propagation="true" class="zhuright youhui" wx:if="{{couponPrice || !yes_coupon}}">
+							<view class="workeradd other" wx:if="{{!couponPrice && !yes_coupon}}">请选择优惠券</view>
+							<image src="/images/you.png" mode="widthFix" class="go_coupon"></image>
+						</navigator>
+					</view>
+				</view>
+
+
+				<!-- 订单已支付 -->
+				<view class="zhuzhi" wx:if="{{item.status == 4 && item.pay_status != 1 && item.coupon_price != '0.00'}}">
+					<view class="zhuleft">
+						<view class="workeradd huise">优惠</view>
+					</view>
+					<view class="zhuright">
+						<view class="workeradd other">-￥{{item.coupon_price}}</view>
+					</view>
+				</view>
+
+				<!-- 已经评论 -->
+				<view class="zhuzhi" wx:if="{{item.status == 5 && item.pay_status != 1 && item.coupon_price != '0.00'}}">
+					<view class="zhuleft">
+						<view class="workeradd huise">优惠</view>
+					</view>
+					<view class="zhuright">
+						<view class="workeradd other">-￥{{item.coupon_price}}</view>
+					</view>
+				</view>
+
+
+				<!-- 支付完总价 -->
+				<view class="zhuzhi" wx:if="{{item.status == 4 && item.pay_status != 1}}">
+					<view class="zhuleft">
+						<view class="workeradd huise">总价</view>
+					</view>
+					<view class="zhuright">
+						<view class="workeradd">￥{{item.price}}</view>
+					</view>
+				</view>
+				<!-- 评论完总价 -->
+				<view class="zhuzhi" wx:if="{{item.status == 5 && item.pay_status != 1}}">
+					<view class="zhuleft">
+						<view class="workeradd huise">总价</view>
+					</view>
+					<view class="zhuright">
+						<view class="workeradd">￥{{item.price}}</view>
+					</view>
+				</view>
+				<!-- 待支付总价 -->
+				<view class="zhuzhi" wx:if="{{item.status == 4 && item.pay_status == 1}}">
+					<view class="zhuleft">
+						<view class="workeradd huise">总价</view>
+					</view>
+
+
+
+					<wxs module="we">
+						var toFixed = function(value) {
+							return value.toFixed(2);
+						}
+						module.exports = {
+							toFixed: toFixed
+						}
+					</wxs>
+					<!-- 默认优惠券 -->
+					<view class="zhuright" wx:if="{{!couponPrice && yes_coupon && item.coupon.less_price}}">
+						<view class="workeradd">￥{{we.toFixed(item.total - item.coupon.less_price)}}</view>
+					</view>
+					<!-- 没有优惠券 -->
+					<view class="zhuright" wx:if="{{!couponPrice && !yes_coupon}}">
+						<view class="workeradd">￥{{we.toFixed(item.total - item.bang_price)}}</view>
+					</view>
+					<!-- 进来就没有 -->
+					<view class="zhuright" wx:if="{{!couponPrice && !item.coupon.less_price && yes_coupon}}">
+						<view class="workeradd">￥{{we.toFixed(item.total - item.bang_price)}}</view>
+					</view>
+					<!-- 选择了优惠券 -->
+					<view class="zhuright" wx:if="{{couponPrice}}">
+						<view class="workeradd">￥{{we.toFixed(item.total - couponPrice)}}</view>
+					</view>
+
+				</view>
+				<!-- 取号时间 -->
+				<wxs module="m1">
+					var ToDate = function(number1) {
+						var n = number1 * 1000; //number1 为毫秒 
+						var date = getDate(n);
+						var Y = date.getFullYear() + '-';
+						var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+						var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+						var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+						var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+						return (Y + M + D + ' ' + h + ':' + m);
+					}
+					module.exports.ToDate = ToDate;
+				</wxs>
+				<view class="zhuzhi coupon-select">
+					<view class="zhuleft">
+						<view class="workeradd huise">取号时间</view>
+					</view>
+					<view class="zhuright">
+						<view class="workeradd">{{m1.ToDate(item.createtime)}}</view>
+					</view>
+				</view>
+
+				<!-- 订单下面操作状态 -->
+				<form class="allbtn">
+					<!-- 待消费状态 -->
+					<view wx:if="{{item.status == 1}}">
+						<view class="quxiao quxiao1">
+							<navigator url="../cancell/cancell?id={{item.id}}&goods_id={{id}}" hover-class="none">取消排号</navigator>
+						</view>
+						<view class="quxiao active fujia_fuwu" wx:if="{{!item.accessorialservice_name}}">
+							<picker bindchange="bindPickerChange" value="{{index}}" range="{{array_fuwu}}" data-index="{{item.id}}">
+								<view>附加服务</view>
+							</picker>
+						</view>
+					</view>
+					<!-- 治疗中 -->
+					<view class="quxiao active quhao" wx:if="{{item.status == 2 && !item.accessorialservice_name}}">
+						<picker bindchange="bindPickerChange" value="{{index}}" range="{{array_fuwu}}" data-index="{{item.id}}">
+							<view>附加服务</view>
+						</picker>
+					</view>
+					<!-- 过号/取消 -->
+					<view class="quxiao active quhao" wx:if="{{item.status == 3 || item.status == 0}}">
+						<!-- 无附加服务重新取号 -->
+						<navigator url="/pages/shouye/selectPerson/selectPerson?goods_id={{item.shop_id}}&comp_id={{item.services_id}}&price={{item.total}}&title={{item.services_name}}" hover-class="none" wx:if="{{!item.accessorialservice_name}}">重新取号</navigator>
+						<!-- 有附加服务重新取号 -->
+						<navigator url="/pages/shouye/selectPerson/selectPerson?goods_id={{item.shop_id}}&comp_id={{item.services_id}}&price={{item.total - 10}}&title={{item.services_name}}" hover-class="none" wx:if="{{item.accessorialservice_name}}">重新取号</navigator>
+					</view>
+					<!--已完成 状态待评价的时候 -->
+					<view wx:if="{{item.status == 4 && item.pay_status != 1}}">
+						<view class="quxiao active quhao" style="border:0">
+							<navigator url="../feekback/feekback?id={{item.id}}&img={{item.portrait}}&name={{item.doctor_name}}" hover-class="none">去评价 </navigator>
+						</view>
+						<view class="quxiao pinjia">
+							<navigator url="/pages/shouye/index/index" open-type="switchTab" hover-class="none">再次理疗</navigator>
+						</view>
+						<view class="quxiao pinjia">
+							<navigator url="/pages/programmeInfo/programmeInfo?id={{item.id}}" hover-class="none">查看针对方案</navigator>
+						</view>
+					</view>
+					<!-- 已经完成 已经评价 -->
+					<view wx:if="{{item.status == 5 && item.pay_status != 1}}">
+						<view class="quxiao active quhao" style="border:0" wx:if="{{item.is_modifiable == 1}}">
+							<navigator url="../feekback1/feekback?id={{item.id}}&img={{item.portrait}}&name={{item.doctor_name}}" hover-class="none">修改评价 </navigator>
+						</view>
+						<view class="quxiao pinjia">
+							<navigator url="/pages/shouye/index/index" open-type="switchTab" hover-class="none">再次理疗</navigator>
+						</view>
+						<view class="quxiao pinjia">
+							<navigator url="/pages/programmeInfo/programmeInfo?id={{item.id}}" hover-class="none">查看针对方案</navigator>
+						</view>
+					</view>
+					<!-- 状态待支付 -->
+
+					<!-- 选择的优惠卷 获取没优惠卷 -->
+					<form class="allbtn" report-submit="true" bindsubmit="gopay" data-orderid="{{item.id}}" wx:if="{{!yes_coupon || couponPrice}}">
+						<button class="quxiao quhao" wx:if="{{item.status == 4 && item.pay_status == 1}}" data-orderid="{{item.id}}" formType="submit">去支付</button>
+					</form>
+					<!-- 默认的最优 -->
+					<form class="allbtn" report-submit="true" bindsubmit="gopay1" data-orderid="{{item.id}}" data-coupon="{{item.coupon.id}}" wx:if="{{yes_coupon && !couponPrice}}">
+						<button class="quxiao quhao" wx:if="{{item.status == 4 && item.pay_status == 1}}" data-orderid="{{item.id}}" formType="submit">去支付</button>
+					</form>
+				</form>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="hui" wx:if="{{orderObj.length==0}}">
+	<!-- 没有订单展示 -->
+	<view class="list">
+		<view class="nobill" wx:if="{{activeindex == 0}}">
+			<image src="/images/noData2.png" style="width:400rpx;height:446rpx;margin: 0 auto"></image>
+			<view>当前没有待消费的订单</view>
+			<navigator url="/pages/shouye/index/index" hover-class="none" open-type="switchTab">
+				<view class="goBtn">去理疗</view>
+			</navigator>
+		</view>
+		<view class="nobill" wx:if="{{activeindex == 1}}">
+			<image src="/images/noData2.png" style="width:400rpx;height:446rpx;margin: 0 auto"></image>
+			<view>当前没有治疗中的订单</view>
+			<navigator url="/pages/shouye/index/index" hover-class="none" open-type="switchTab">
+				<view class="goBtn">去理疗</view>
+			</navigator>
+		</view>
+		<view class="nobill" wx:if="{{activeindex == 2}}">
+			<image src="/images/noData2.png" style="width:400rpx;height:446rpx;margin: 0 auto"></image>
+			<view>当前没有已完成的订单</view>
+			<navigator url="/pages/shouye/index/index" hover-class="none" open-type="switchTab">
+				<view class="goBtn">去理疗</view>
+			</navigator>
+		</view>
+		<view class="nobill" wx:if="{{activeindex == 3}}">
+			<image src="/images/noData2.png" style="width:400rpx;height:446rpx;margin: 0 auto"></image>
+			<view>当前没有已取消/过号的订单</view>
+			<navigator url="/pages/shouye/index/index" hover-class="none" open-type="switchTab">
+				<view class="goBtn">去理疗</view>
+			</navigator>
+		</view>
+	</view>
+</view>

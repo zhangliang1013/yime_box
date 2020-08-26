@@ -1,0 +1,57 @@
+<!-- 取号成功页面 -->
+<view class="main">
+	<view class="page">
+		<view class="info">
+			<view class="info-item">
+				<view class="info-title">{{yanmi_du.line_number}}</view>
+				<view class="info-no">排队号码</view>
+			</view>
+			<view class="info-item">
+				<view class="info-title">{{yanmi_du.underway}}</view>
+				<view class="info-no">前面人数/人</view>
+			</view>
+			<view class="info-item">
+				<view class="info-title">{{yanmi_du.waiting_time}}分钟</view>
+				<view class="info-no">预计等待/分钟</view>
+			</view>
+		</view>
+		<view class="service">
+			<view class="sevname">{{title}}</view>
+			<view class="sevprice"><text>￥</text>{{price}}</view>
+		</view>
+	
+    <view class="msg" wx:if="{{yanmi_du.underway == 0}}" >
+			<view class="notice">已经到您啦~</view>
+			<view class="jianyi">治疗师在店内等您，快来理疗吧!</view>
+			<view class="jianyi">如叫号超过3分钟，您的排队将进行延后处理。</view>
+		</view>
+		
+		<view class="xuzhi">
+			<view class="rule">排队规则</view>
+			<view class="rulerow ruleone">1、为了保障您的隐私，从8月1日起，排队及叫号期间主治师不再电话联系您。</view>
+			<view class="rulerow">2、请在前面等待1人时到店等候，避免排队被延后了哦。</view>
+			<view class="rulerow">如叫号超过3分钟，您的排队将进行延后处理。</view>
+			<view class="rulerow">4、等待时间仅供参考，如不理疗，请在叫号前取消排队。</view>
+		</view>
+	</view>
+</view>
+<view class="paijiv" bindtap="showModal">查看排队</view>
+
+ <picker bindchange="bindPickerChange" value="{{index}}" range="{{array_fuwu}}">
+<view class="footer_">附加服务：点击可添加服务理疗哦~</view>
+  </picker>
+
+
+
+<!-- 刚进取号提醒的弹窗 -->
+<view class="zhezhao" wx:if="{{numberSuc}}">
+  <view class="zhezhaoBox">
+    <view class="title">取号提醒</view>
+    <view style="padding:0 50rpx;font-size:26rpx">
+      <view style="padding:20rpx 0">搜索并关注“医么”公众号，避免错过排队进度消息。</view>
+      <image src="/images/guanzhu.png" style="width:511rpx;height:250rpx"></image>
+    </view>
+    <view class="myNow" bindtap="showNum">我知道了</view>
+  </view>
+</view>
+

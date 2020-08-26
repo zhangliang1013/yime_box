@@ -1,0 +1,17 @@
+.main {
+  padding: 20rpx 25rpx;
+}
+.title {
+  width: 100%;
+  text-align: center;
+  margin: 10rpx 0;
+  font-size: 28rpx;
+}
+.row {
+  font-size: 28rpx;
+  margin: 5rpx;
+}
+.title1{
+  font-weight: 700;
+  font-size: 30rpx;
+}

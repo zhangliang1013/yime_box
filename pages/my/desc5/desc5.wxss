@@ -1,0 +1,110 @@
+/* pages/my/desc5/desc5.wxss */
+.main {
+  background:rgba(247,247,247,1);
+  height: 100%;
+}
+.main .dangan {
+  width: 750rpx;
+  display: flex;
+   flex-wrap: wrap;
+   margin-bottom: 130rpx;
+}
+.main .dangan .list {
+  width: 50%;
+  /* height: 400rpx; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80rpx;
+}
+.main .dangan .list .cli {
+  position: relative;
+  width: 240rpx;
+  height: 241rpx;
+  border-radius: 0 0 20rpx 20rpx;
+  overflow: hidden;
+} 
+.main .dangan .list .cli  > image{
+  width: 100%;
+  height: 100%;
+}
+.main .dangan .list .cli .dingwei{
+  position: absolute;
+  bottom: 35rpx;
+  left: 25rpx;
+}
+.main .dangan .list .cli .dingwei .title {
+font-size:24rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(51,51,51,1);
+}
+.main .dangan .list .cli .dingwei .contoin {
+  font-size:24rpx;
+font-family:Source Han Sans CN;
+font-weight:bold;
+color:rgba(51,51,51,1);
+}
+.main .dangan .list .cli .shanchu {
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+}
+.main .dangan .list .cli .shanchu image{
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+}
+.main .foot {
+  width: 750rpx;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  background:rgba(255,255,255,1);
+}
+.main .foot navigator {
+  display: inline-block;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+.main .foot view{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .foot view image{
+   height: 7rpx;
+   width: 48rpx;
+}
+.main .foot .left {
+  height: 70rpx;
+  border-right: 1rpx dashed #ccc;
+}
+.main .foot .right image{
+  height: 48rpx;
+  width: 48rpx;
+}
+.nobill {
+	text-align: center;
+	color: #ccc;
+	font-size: 28rpx;
+	padding-top: 200rpx;
+
+}
+
+.goBtn {
+	width: 180rpx;
+	height: 55rpx;
+	line-height: 55rpx;
+	border-radius: 50rpx;
+	/* border: 1rpx solid #0A65F1; */
+	background: linear-gradient(0deg,#156df2  0%, #2a7fff 100%);
+	color: rgb(255, 255, 255);
+	font-size: 30rpx;
+	margin: 30rpx auto
+}

@@ -1,0 +1,37 @@
+<!-- 历史优惠券页面 -->
+<view class="main">
+<!-- 优惠券循环 -->
+  <view class="detail"  wx:for="{{conlist}}" wx:key='index' >
+    <view class="row">
+      <view class="row-box">
+        <view class="info">
+          <view class="head">{{item.coupon.title}}</view>
+          		<wxs module="m1">
+									var ToDate = function(number1) {
+										var n = number1 * 1000; //number1 为毫秒 
+										var date = getDate(n);
+										var Y = date.getFullYear() + '-';
+										var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+										var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+										var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+										var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+										return (Y + M + D );
+									}
+									module.exports.ToDate = ToDate;
+								</wxs>
+          <view class="desc">{{m1.ToDate(item.createtime)}}~{{m1.ToDate(item.endtime)}}</view>
+          <view class="desc" wx:if="{{item.coupon.shop_ids ==0}}">适用范围：所有门店通用</view>
+        </view>
+        <view class="money">
+          <view class="qian">￥{{item.coupon.less_price}}</view>
+          <view class="qianshuo">满{{item.coupon.full_price}}元可用</view>
+        </view>
+        <view class="user" wx:if="{{item.status == 3}}">已过期</view>
+        <view class="user" wx:if="{{item.status == 2}}">已使用</view>
+         <view class="user" wx:if="{{item.status == 1}}">未使用</view>
+      </view>
+    </view>
+  </view>
+  <view class="hiscoupon" wx:if="{{conlist.length == 0}}">邀请好友立得优惠劵</view>
+</view>
+

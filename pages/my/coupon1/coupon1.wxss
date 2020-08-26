@@ -1,0 +1,27 @@
+page{
+  height: 100%
+}
+.row{
+	padding: 50rpx 25rpx 0;
+}
+.top{
+	color: #333333;
+}
+.bottom{
+	color: #333333;
+	line-height: 40rpx;
+	font-size: 25rpx;
+}
+.pos{
+	position: fixed;
+	bottom: 30rpx;
+	width: 100%;
+	text-align: center;
+	font-size: 28rpx;
+	color: #828282;
+}
+.kefu{
+	margin-top: 20rpx;
+}
+.view-content{ width:100%; margin-top:30rpx; padding-bottom:30rpx; line-height:190%; font-size:25rpx; color:#727171; }
+.view-content .rich-html>image{ width:100rpx; }

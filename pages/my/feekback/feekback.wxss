@@ -1,0 +1,486 @@
+page{
+  background:#f8f8f8;
+  
+}
+.cate{
+  margin: 20rpx 0;
+  margin-top: 30rpx;
+	background: #fff;
+	border-radius: 15rpx;
+	padding: 30rpx 40rpx;
+  /* box-shadow:2rpx 2rpx 20rpx #d8d8d8; */
+}
+.head text{
+  color: rgba(21,109,241,1);
+  display: inline-block;
+  width: 12rpx;
+}
+.head{
+	font-size: 28rpx;
+  overflow: hidden;
+}
+
+.head1 {
+  display: flex;
+  justify-content: space-between;
+}
+.head1 text {
+  font-size:24rpx;
+  font-family:Source Han Sans CN;
+  font-weight:400;
+}
+.head1 view {
+  display: flex;
+}
+.head1 view text{
+  font-size:24rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(153,153,153,1);
+}
+.head1 view image{
+  width: 30rpx;
+  height: 40rpx;
+  margin-left: 15rpx;
+}
+
+.cate-list{
+	overflow: hidden;
+}
+
+.radio-group{
+display: flex;
+flex-wrap: wrap;
+}
+.cate-list .cate-item{
+font-size: 26rpx;
+margin-top: 34rpx;
+color: #5c5c5c;
+width: 33%;
+box-sizing: border-box;
+text-align: start;
+}
+.cate-item>label{
+  display: flex;
+  align-items: center;
+}
+checkbox .wx-checkbox-input,
+radio .wx-radio-input {
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 50%;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked,
+radio .wx-radio-input.wx-radio-input-checked{
+  background-color: #fff;
+  border-color: #156DF1;
+}
+/* 单选框选中后对勾样式 */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before,
+radio .wx-radio-input.wx-radio-input-checked::before{
+    border-radius: 50%;
+    width: 44rpx;
+    height: 44rpx;
+    line-height: 40rpx;
+    text-align: center;
+    font-size: 0;   
+    border-color: #156DF1;
+    color: transparent;
+    background-color: #156DF1;
+}
+.radio {
+  font-size: 22rpx;
+  position: relative;
+}
+.radio .wen_hao {
+  position: absolute;
+    top: 0;
+    left: 110rpx;
+    width: 20rpx;
+    height: 20rpx;
+}
+.radio .wen_hao image{
+  width: 100%;
+  height: 100%;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before,
+radio .wx-radio-input.wx-radio-input-checked::before{
+   border-radius: 50%;
+   width: 20rpx;
+   height: 20rpx;
+   /* line-height: 40rpx; */
+   text-align: center;
+   font-size:0; 
+   color:#fff;
+   background: #156DF1;
+  
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  width: 16rpx;
+  height: 16rpx;
+}
+.item-text input{
+	width: 100%;
+	font-size: 30rpx;
+	height: 50rpx;
+	line-height: 50rpx;
+	margin-top: 30rpx;
+}
+.content{
+	margin: 20rpx 0;
+	background: #fff;
+	border-radius: 15rpx;
+	padding: 30rpx 40rpx;
+  /* box-shadow:2rpx 2rpx 20rpx #d8d8d8; */
+}
+.head .left {
+  font-size: 28rpx;
+	float: left;
+  display: flex;
+  align-items: center
+}
+.head .right {
+	float: right;
+	color: #dddddd;
+  font-size: 24rpx;
+}
+.c-text textarea{
+	margin-top: 30rpx;
+	font-size: 22rpx;
+	height: 200rpx;
+  z-index: 0;
+}
+.pic-icon{
+width: 100rpx;
+height: 100rpx;
+background: #f2f2f2;
+color: #999;
+text-align: center;
+line-height: 90rpx;
+font-size: 64rpx;
+}
+.pic{
+  display: flex;
+}
+.pic image{
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 18rpx;
+}
+.person{
+	/* margin: 20rpx 0rpx; */
+  font-size: 28rpx;
+	background: #fff;
+  border-radius: 15rpx;
+  /* padding: 10rpx 20rpx; */
+  padding: 35rpx 0;
+  padding-left: 40rpx;
+}
+.server{
+	border:1rpx solid #e6e6e6;
+	display: flex;
+}
+.centerline{
+	width: 3rpx;
+	height: 60rpx;
+	margin-top: 15rpx;
+	background: #e6e6e6;
+}
+.server .number{
+	flex: 1;
+	text-align: center;
+	font-size: 24rpx;
+}
+.haoma{
+	display: inline-block;
+	padding: 30rpx 0;
+	color: #999999;
+}
+.haoma.active{
+	color: #28b9db;
+	border-bottom: 1rpx solid #28b9db;
+}
+.order{
+	/* border:1rpx solid #e6e6e6; */
+	border-top: none;
+	font-size: 24rpx;
+	padding: 30rpx 15rpx;
+  border-left: 1rpx solid #eee;
+   border-bottom: 1rpx solid #eee;
+    border-right: 1rpx solid #eee;
+}
+.shouyi{
+	display: flex;
+	flex: 1;
+}
+.checkbox{
+	display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.leftimg image{
+	width: 150rpx;
+	height: 150rpx;
+	border-radius: 50%;
+}
+.centertext{
+	flex: 1;
+}
+.righttext{
+	flex: 1;
+	text-align: right;
+}
+.list{
+	display: flex;
+}
+.yiselected{
+	width: 100rpx;
+}
+.serveselected{
+	display: flex;
+	flex: 1;
+}
+.rightimg image{
+	width: 50rpx;
+	height: 20rpx;
+}
+.shouji{
+	padding: 30rpx;
+}
+.mobileimg image{
+	width: 30rpx;
+	height: 40rpx;
+	margin: 5rpx 15rpx 0 0;
+}
+.rightimg{
+	margin-left: 20rpx;
+}
+.mobile{
+	display: flex;
+	padding: 15rpx;
+	border:1rpx solid #e6e6e6;
+	border-radius: 15rpx;
+}
+/* .checkbox{
+	color: #666666;
+	padding: 30rpx 0 15rpx;
+	font-size: 24rpx;
+} */
+/* checkbox .wx-checkbox-input{
+      width: 25rpx;
+      height: 25rpx;
+  }
+  
+  checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+      border: 1rpx solid transparent;
+      background-color: #28b9db;
+  }
+
+  checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+      width: 22rpx;
+      height: 22rpx;
+      line-height: 22rpx;
+      text-align: center;
+      font-size:22rpx;
+      color:#fff;
+      background: transparent;
+      transform: translate(-50%, -50%) scale(1);
+      -webkit-transform: translate(-50%, -50%) scale(1);
+  } */
+
+.btn{
+	bottom: 0;
+	width: 100%;
+	background: #fff;
+}
+.anniu{
+background: #5091FF;
+color: #fff;
+margin: 0rpx 30rpx 50rpx;
+height: 84rpx;
+line-height: 84rpx;
+border-radius: 40rpx;
+text-align: center;
+font-size: 32rpx;
+}
+.kongzhe{
+	height: 50rpx;
+}
+
+.blovea-modal{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.7);
+  z-index: 666;
+  }
+  .conyt{
+    background: #fff;
+    border-radius: 16rpx;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 600rpx;
+   
+    transform: translate(-50%,-50%);
+    z-index: 666;
+  }
+  .cont-lkd{
+    text-align: center;
+    padding: 35rpx 0;
+    color: #333;
+    font-weight: 500;
+    font-size: 30rpx;
+    border-bottom: 1rpx solid #eee;
+  }
+  .convv{
+    height: 300rpx;
+    text-align: left;
+    color: #686868;
+    font-size: 24rpx;
+    padding: 50rpx 50rpx;
+    border-bottom: 1rpx solid #eee;
+    letter-spacing: 6rpx;
+  }
+  .co-end{
+    text-align: center;
+    color:#5091FF;
+    font-size:28rpx;
+    padding: 24rpx 0;
+    
+  }
+  .blovbin{
+    position: absolute;
+    width: 700rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+     border-bottom: 2rpx solid #eee;
+    
+    top: 36rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    display: flex;
+    align-items: center;
+  }
+  .blovbin image{
+    width: 34rpx;
+    height: 34rpx;
+    margin-right: 18rpx;
+   
+  }
+  .guanbi {
+    position: relative;
+    z-index: 999999;
+  }
+  .blovbin input{
+    padding-left: 28rpx;
+    font-size: 28rpx;
+    flex: 2;
+  }
+  .jll{
+    color: #333;
+    font-size: 30rpx;
+    padding: 0 24rpx;
+    position: relative;
+  }
+  .jll::after{
+    content: " ";
+    position: absolute;
+    height: 40rpx;
+    width: 2rpx;
+    background: #ccc;
+    left: 0;
+    top: 16rpx;
+  }
+  .scrloo{
+    position: absolute;
+    background: #fff;
+    border-radius: 0 0 12rpx 12rpx;
+    top: 108rpx;
+    width: 700rpx;
+    transform: translateX(-50%);
+    left: 50%;
+
+  }
+  .last_oo{
+    display: flex;
+    align-items: center;
+    margin-left: 24rpx;
+    margin-right: 16rpx;
+    border-bottom: 1rpx solid #eee;
+    padding: 24rpx 0;
+
+  }
+  .last_img image{
+    width: 60rpx;
+    height: 60rpx;
+  }
+  .last-hcs{
+    font-size: 28rpx;
+    color: #333;
+  }
+  .last-hcs-s{
+    margin-left: 24rpx;
+  }
+  .last-hcs-ok{
+    margin-left: 80rpx;
+  }
+  .hlong{
+    z-index: 3;
+  }
+  .xuanz image{
+    width: 30rpx;
+    height: 30rpx;
+  }
+  .xuanz{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .klio{
+   display: flex;
+   padding-top: 30rpx;
+  }
+
+    .dklkk{
+    vertical-align: middle;
+width: 180rpx;
+display: flex;
+
+  }
+  .dklkk text{
+    margin-left: 18rpx;
+  }
+  .dklkk image{
+    width: 50rpx;
+    height: 50rpx;
+
+  }
+  .dlls image{
+    width: 38rpx;
+    height: 38rpx;
+  }
+  
+  .dlls{
+    margin-left: 140rpx;
+  }
+
+  .mobiletext {
+    width: 100%;
+  }
+  .mobiletext input{
+    font-size: 26rpx;
+  }
+
+  .niming  text{
+    font-size:24rpx;
+    font-family:Source Han Sans CN;
+    font-weight: 400;
+    display: inline-block;
+    margin-top: 5rpx;
+    /* color:rgba(153,153,153,1); */
+  }
+  

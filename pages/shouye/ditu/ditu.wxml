@@ -1,0 +1,41 @@
+<!-- 地图选点页面 -->
+<view class='view'>
+  <map longitude="{{longitude}}" bindmarkertap="markertap" scale="14" latitude="{{latitude}}" markers="{{markers}}"  show-location>
+    <view class="tip">
+        <view class="tip-ed">全国有{{count}}家小医门店为您服务</view>
+        <cover-image src="/images/close.jpg" class="tiok" bindtap="forMoreInfoTap"></cover-image>
+    </view>   
+  </map>
+</view>
+<view class="jiushi"  animation='{{animationData}}'>
+  <view class="row"  >
+    <view class="left">
+      <view class="title-text">
+        <view class="title-name">
+        <text> {{deles.name}}</text>
+          <!-- <image  src="/images/bang@2x.png" mode="widthFix" ></image> -->
+        </view>
+      </view>
+      <view class="wait-text">
+       <image src="/images/wuren.png" mode="widthFix" wx:if="{{deles.underway == 0}}"></image>
+       <image  src="/images/youren.png" mode="widthFix"  wx:if="{{deles.underway != 0}}"></image>
+       <text>{{deles.underway}}人正在治疗</text>
+      </view> 
+      <!-- 点击位置跳商家详情 -->
+      <view class="area-text" bindtap="gogun" data-id="{{deles.id}}">
+        <view class="area-icon">
+          <!-- <image src="/images/address.jpg"/> -->
+           <cover-image src="/images/address.png" style="width: 18rpx; height:23rpx;"></cover-image>
+        </view>
+        <view class="area-name">
+          {{deles.address}}
+        </view>
+      </view>
+    </view>
+    <view class="right">
+      <view class="juli">{{deles.distance}}{{deles.units}}</view>
+      <view class="zuijin" wx:if="{{deles.distance <= 3}}">离你最近</view>
+      <view class="operate" bindtap="gogun" data-id="{{deles.id}}">去理疗</view>
+    </view>
+  </view>
+</view>

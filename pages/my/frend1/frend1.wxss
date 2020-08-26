@@ -1,0 +1,17 @@
+/* pages/desc/desc.wxss */
+page{
+	background: #f7f7f7;
+}
+.main{
+	padding: 0 30rpx 30rpx;
+}
+.info{
+	margin-top: 50rpx;
+	color: #333333;
+	font-size: 35rpx;
+}
+.info-text{
+	font-size: 28rpx;
+	line-height: 40rpx;
+	color: #5c5c5c;
+}

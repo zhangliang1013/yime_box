@@ -1,0 +1,128 @@
+<!-- 个人中心主页 -->
+<view class="main">
+
+	<view class="avate">
+		<view class="title">个人中心</view>
+		<view class="info">
+			<!-- 点击跳转个人详情 -->
+			<navigator class="left" url="/pages/my/pondetail/pondetail">
+				<image src="{{avatar}}"  wx:if="{{isauth}}"/>
+				<image src="/images/kong.png"  wx:if="{{!isauth}}"></image>
+			</navigator>
+
+			<view class="right">
+				<!-- 名字 -->
+				<view class="nickname">
+					{{isauth? nickname:'未登录'}}
+				</view>
+				<!-- 积分-->
+				<view class="jifen">
+					积分: {{isauth? jifen:'未登录'}}
+				</view>
+				<!-- 绑定手机号 -->
+				<view class="mobile">
+					<view wx:if="{{isauth}}">{{phone}}</view>
+					<navigator url="/pages/auth/auth" class="change-text" wx:if="{{!isauth}}">
+						<text>绑定手机号</text>
+					</navigator>
+				</view>
+			</view>
+		</view>
+		<!-- 权益跳转页面 -->
+		<navigator url="../member/member?group_id={{group_id}}" hover-class="none">
+			<view class="bang_img">
+				<image src="/images/bang.png" mode="widthFix"></image>
+			</view>
+		</navigator>
+	</view>
+
+	<!-- 内容 -->
+	<view class="content">
+		<view class="row">
+			<!-- 订单 -->
+			<view class="contetn-text" bindtap="go_order">
+				<view class="icon-text">
+					<image src="../../../images/dingdan.png" mode="widthFix" class="img1" />
+				</view>
+				<view class="text-text">订单</view>
+			</view>
+
+			<view class="contetn-text">
+				<navigator url="../coupon/coupon" hover-class="none">
+					<view class="icon-text">
+						<image src="../../../images/quanka.png" mode="widthFix" class="img2" />
+					</view>
+					<view class="text-text">优惠券</view>
+				</navigator>
+			</view>
+			<view class="contetn-text">
+				<navigator url="../frend/frend" hover-class="none">
+					<view class="icon-text">
+						<image src="../../../images/goodfriend.png" mode="widthFix" class="img3" />
+					</view>
+					<view class="text-text">邀请好友</view>
+				</navigator>
+			</view>
+		</view>
+
+		<view class="row">
+			<view class="contetn-text">
+				<navigator url="../feekback/feekback" hover-class="none">
+					<view class="icon-text">
+						<image src="../../../images/yijian.png" mode="widthFix" class="img4" />
+					</view>
+					<view class="text-text">意见反馈</view>
+				</navigator>
+			</view>
+
+			<view class="contetn-text">
+				<!-- 个人档案 -->
+				<navigator url="/pages/my/desc5/desc5" hover-class="none">
+					<view class="icon-text">
+						<image src="../../../images/dangan.png" mode="widthFix" class="img5" />
+					</view>
+					<view class="text-text">个人档案</view>
+				</navigator>
+				<!-- <view class="hongbao">领红包</view> -->
+			</view>
+			<view class="contetn-text">
+				<navigator url="/pages/programme/programme" hover-class="none">
+					<view class="icon-text">
+						<image src="../../../images/fangan.png" mode="widthFix" class="img6" />
+					</view>
+					<view class="text-text">针对方案</view>
+				</navigator>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="row row1">
+	<view class="contetn-text1">
+		<navigator url="/pages/joinapply/joinapply" hover-class="none">
+			<view class="icon-text">
+				<image class="img" src="../../../images/jiameng.png" mode="widthFix" />
+			</view>
+			<view class="text-text">加盟申请</view>
+		</navigator>
+	</view>
+</view>
+
+
+<!-- <view class="zhezhao" wx:if="{{is_tan}}"></view> -->
+<view class="tanc" wx:if="{{is_tan}}">
+	<view class="tanbang">绑定手机号</view>
+	<view class="input">
+		<view class="section">
+			<input placeholder="输入手机号" />
+		</view>
+		<view class="sectcode">
+			<view class="input-text"><input placeholder="请填写短信验证码" /></view>
+			<view class="code">获取验证码</view>
+		</view>
+	</view>
+	<view class="btn">
+		<view class="cancell">取消</view>
+		<view class="ok">确认</view>
+	</view>
+</view>

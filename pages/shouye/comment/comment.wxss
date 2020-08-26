@@ -1,0 +1,127 @@
+page{
+  height: 100%;
+  
+}
+.main{
+	font-size: 18rpx;
+	background: #F8F8F8;
+}
+.goBtn{
+  width: 180rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  border-radius: 50rpx;
+  background: #4583FF;
+  color: #FFFFFF;
+  font-size: 30rpx;
+  margin: 30rpx auto
+}
+.cate{
+	background: #fff;
+	padding: 20rpx 30rpx;
+	height: 140rpx;
+	overflow: hidden;
+}
+.cate-item{
+	width:80rpx;
+	height:48rpx;
+	line-height: 48rpx;
+	text-align: center;
+	padding: 0 10rpx;
+	border:2rpx solid #333333;
+	color: #333333;
+	display: inline-block;
+	margin: 0 30rpx 20rpx 0;
+	font-size: 20rpx;
+	border-radius:24rpx;
+	
+}
+.cate-item.active{
+	height: 52rpx;
+	background: #4583FF;
+	color: #ffffff;
+	border-radius:24rpx;
+	border:0;
+}
+.head{
+	padding: 20rpx;
+	color: #333333;
+	font-size: 26rpx;
+}
+.row{
+	padding: 20rpx 30rpx;
+	border-bottom: 2rpx solid #e6e6e6;
+
+	background: #fff;
+}
+.service-item{
+	display: flex;
+	padding-top: 30rpx;
+	font-size: 35rpx; 
+}
+.service-left{
+	width: 100rpx;
+}
+.service-left image{
+	width: 90rpx;
+	height: 90rpx;
+	border-radius: 50%;
+}
+.service-you{
+	margin-left: 10rpx;
+	flex: 1;
+}
+.service-top{
+	overflow:hidden;
+	color: #999999;
+  display: flex;
+  justify-content: space-between;
+}
+.serv-name{
+	float: left;
+}
+.serv-time{
+	float: right;
+}
+.service-name{
+  font-size: 24rpx;
+  font-weight: bold;
+	color: #333333;
+}
+.service-name text{
+	color: #999999;
+  font-size: 22rpx
+}
+.service-time{
+	font-size: 18rpx;
+}
+.service-person{
+	margin-top: 10rpx;
+	font-size: 20rpx;
+}
+.service-info{
+	margin: 30rpx 0;
+  font-size: 24rpx;
+	color: #333333;
+}
+.service-level{
+	margin-top: 10rpx;
+  text-align: center;
+	display: flex;
+	float: right;
+}
+.service-level image{
+	width: 30rpx;
+	height: 30rpx;
+}
+.service-pic{
+	padding:30rpx 0;
+  display: flex;
+}
+.service-pic image{
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 10rpx;
+	margin-right: 15rpx;
+	
+}

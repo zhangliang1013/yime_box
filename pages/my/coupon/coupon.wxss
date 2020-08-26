@@ -1,0 +1,242 @@
+.main {
+	/* padding-top: 30rpx; */
+	font-size: 30rpx;
+	height: 100%;
+	background: rgba(247, 247, 247, 1);
+}
+
+.input {
+	display: flex;
+	padding: 46rpx 30rpx;
+	padding-bottom: 20rpx;
+}
+
+.input .img {
+	position: absolute;
+	top: 15rpx;
+	left: 30rpx;
+}
+
+.input .img image {
+	width: 42rpx;
+	height: 40rpx;
+}
+
+.btn {
+	width: 160rpx;
+	height: 68rpx;
+	line-height: 68rpx;
+	background: linear-gradient(0deg, rgba(21, 109, 242, 1) 0%, rgba(42, 127, 255, 1) 100%);
+	border-radius: 0px 34px 34px 0px;
+	color: #FEFEFE;
+	font-size: 26rpx;
+	text-align: center;
+	position: absolute;
+	z-index: 9999;
+	top: -1rpx;
+	right: -2rpx;
+}
+
+.input-text {
+	flex: 1;
+	position: relative;
+	height: 68rpx;
+	width: 682rpx;
+	padding-left: 30rpx;
+	border: 1px solid rgba(146, 187, 249, 1);
+	border-radius: 34rpx;
+	box-sizing: border-box;
+}
+
+.quanuser {
+	font-size: 24rpx;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(51, 51, 51, 1);
+	margin-right: 35rpx;
+}
+
+.input-text input {
+	font-size: 24rpx;
+	height: 68rpx;
+	margin-left: 70rpx;
+	line-height: 70rpx;
+	border-right: none;
+	color: rgba(51, 51, 51, 1);
+}
+
+.nocou {
+	margin: 40rpx 0 0 30rpx;
+	overflow: hidden;
+	color: #333333;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.noleft {
+	float: left;
+	font-size: 24rpx;
+	background: rgba(248, 248, 248, 1);
+}
+
+.noright {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.riimg {
+	margin: 5rpx 10rpx 0 0;
+}
+
+.riimg image {
+	width: 35rpx;
+	height: 35rpx;
+}
+
+.goodsfrend {
+	text-align: center;
+	margin: 50rpx;
+	color: #cccccc;
+}
+
+.hiscoupon {
+	color: #999;
+	text-align: center;
+	margin-top: 160rpx;
+}
+
+.detail {
+	margin: 30rpx;
+	width: 680rpx;
+	height: 250rpx;
+	position: relative;
+	background: radial-gradient(circle at right bottom, rgba(19, 93, 241, 0.05) 20rpx, #FFFFFF 0) top right / 51% 162rpx no-repeat,
+		radial-gradient(circle at left bottom, rgba(19, 93, 241, 0.05) 20rpx, #FFFFFF 0) top left / 51% 162rpx no-repeat,
+		radial-gradient(circle at right top, rgba(19, 93, 241, 0.05) 20rpx, #FFFFFF 0) bottom right / 51% 90rpx no-repeat,
+		radial-gradient(circle at left top, rgba(19, 93, 241, 0.05) 20rpx, #FFFFFF 0) bottom left / 51% 90rpx no-repeat;
+	box-shadow: 0px 8px 21px 2px rgba(19, 93, 241, 0.11);
+	border-radius: 12rpx;
+}
+
+.detail::after {
+	content: '';
+	width: 600rpx;
+	height: 2rpx;
+	background-color: #C5CFFF;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 170rpx;
+	margin: auto;
+}
+
+.posimg {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.posimg image {
+	width: 47rpx;
+	height: 50rpx;
+}
+
+.row-box {
+	display: flex;
+	border-radius: 10rpx;
+	padding: 30rpx;
+}
+
+.row-box_ed {
+	display: flex;
+	border-radius: 10rpx;
+	padding: 30rpx 20rpx;
+}
+.money {
+	width: 160rpx;
+	font-size: 40rpx;
+	margin-top: 30rpx;
+	text-align: center;
+	position: relative;
+}
+
+.qian {
+	color: #86AFFF;
+	margin-top: -30rpx;
+}
+
+.money text {
+	font-size: 20rpx;
+	position: absolute;
+	left: 50%;
+	margin-left: -30rpx;
+}
+
+.qianshuo {
+	margin-top: 15rpx;
+	font-size: 20rpx;
+	color: #999999;
+}
+
+.info {
+	margin-left: 10rpx;
+	flex: 1;
+}
+
+.head {
+	color: #333333;
+	font-size: 26rpx;
+	font-weight: bold;
+	margin-bottom: 20rpx;
+}
+
+.desc {
+	font-size: 20rpx;
+	color: #333333;
+	margin-bottom: 10rpx;
+}
+
+.user {
+	width: 160rpx;
+	background: #73a8f7;
+	color: #fff;
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 24rpx;
+	border-radius: 30rpx;
+	text-align: center;
+	position: absolute;
+	right: 30rpx;
+	bottom: 10rpx;
+}
+
+.user_ed {
+	width: 160rpx;
+	background: #ccc;
+	color: #fff;
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 24rpx;
+	border-radius: 30rpx;
+	text-align: center;
+	position: absolute;
+	right: 30rpx;
+	bottom: 10rpx;
+}
+.footer {
+	font-size:24rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(21,109,242,1);
+width: 100%;
+box-sizing: border-box;
+padding-right: 40rpx;
+padding-bottom: 40rpx;
+padding-top: 6rpx;
+text-align: end;
+}
+.footer text{
+	display: inline-block;
+}

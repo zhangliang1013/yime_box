@@ -1,0 +1,135 @@
+<!-- 意见反馈页面 -->
+<view class="main">
+
+	<view class="cate">
+		<view class="head">
+			<text>* </text>反馈类型
+		</view>
+		<view class="cate-list">
+			<radio-group class="radio-group" bindchange="radioChange">
+      <!-- 1 -->
+      <view class="cate-item">
+			<label class="radio" >
+				<radio value="接私单"  />接私单
+        <view class="wen_hao" catchtap="sidan_handle">
+        <image src="/images/wenhao.png"  mode="widthFix"></image>
+        </view>
+			</label>
+			</view>
+
+       <view class="cate-item">
+			<label class="radio" >
+				<radio value="治疗师上班离岗"  />治疗师上班离岗
+			</label>
+			</view>
+
+         <view class="cate-item">
+			<label class="radio" >
+				<radio value="服务沟通&态度"  />服务沟通&态度
+			</label>
+			</view>
+
+         <view class="cate-item">
+			<label class="radio" >
+				<radio value="肌骨理疗效果"  />肌骨理疗效果
+			</label>
+			</view>
+
+         <view class="cate-item">
+			<label class="radio" >
+				<radio value="门店卫生&陈列"  />门店卫生&陈列
+			</label>
+			</view>
+
+         <view class="cate-item">
+			<label class="radio" >
+				<radio value="手法优化"  />手法优化
+			</label>
+			</view>
+
+         <view class="cate-item">
+			<label class="radio" >
+				<radio value="其他"  />其他
+			</label>
+			</view>
+			</radio-group>
+		</view>
+	</view>
+
+	<view class="content">
+		<view class="head">
+			<view class="left"><text>*  </text>反馈内容</view>
+			<view class="right">(0/100)</view>
+		</view>
+		<view class="c-text">
+			<textarea  maxlength="100" disabled="{{jiemei}}" bindinput="bindonhod" placeholder="{{!jiemei?'请填写反馈，我们将为您不断改进':''}}" wx:if="{{!hide_blok}}" wx:if="{{!fankui2}}" />
+		</view>
+		<view class="pic">
+       <view class="pic-icon" catchtap="selctPhone">
+       +
+       </view>
+        <image mode="scaleToFill" src="{{item}}" wx:for="{{prell}}" wx:key="index" wx:if="{{prell.length!=0}}" data-index="{{index}}" bindtap="preimg"></image>
+    </view>
+	</view>
+
+
+
+	<view class="person">
+<view class="niming">
+		<checkbox-group bindchange="checkboxChange" >
+		  <label class="checkbox" >
+		    <checkbox value="1" /> 
+        <text> 匿名提交</text>
+		  </label>
+		</checkbox-group>
+</view>
+	</view>
+
+
+	<view class="kong kongzhe"></view>
+</view>
+<view class="btn">
+	<view class="anniu" bindtap="fankuiover">提交反馈</view>
+</view>	
+
+
+
+<!-- 搜索理疗师傅 -->
+<!-- <view class="blovea-modal" wx:if="{{hide_blok}}">
+  <view class="blovbin">
+    <input type="text" placeholder="请输入理疗师名称" bindinput="getvals"></input>
+    <view class="guanbi">
+     <image src="../../../images/shuruios.png" catchtap="hideBOX"></image>
+    </view>
+    <view class="jll"  catchtap="seachok">搜索</view>
+  </view>
+  <view class="scrloo">
+    <scroll-view style="height:580rpx;" scroll-y>
+      <view class="last_oo" wx:for="{{zong}}" wx:key bindtap="selcx" data-index="{{index}}">
+        <view class="last_img">
+          <image src="{{url}}{{item.pic}}"></image>
+        </view>
+        <view class="last-hcs last-hcs-s"></view>
+        <view class="last-hcs last-hcs-ok">{{item.name}}</view>
+      </view>
+    </scroll-view>
+  </view>
+</view> -->
+
+
+<!-- 接私单的弹窗 -->
+<view class="blovea-modal" wx:if="{{jiemei}}">
+  <view class="conyt">
+    <view class="cont-lkd">接私单</view>
+    <view class="convv">接私单指治疗师未通过医么公众号/小程序为您服务，私自接单的行为。一经核实，将提供奖励2000元。</view>
+    <view class="co-end" catchtap="hidemodal">我知道了</view>
+  </view>
+</view>
+
+<view class="blovea-modal" wx:if="{{fankui2}}">
+  <view class="conyt">
+    <view class="cont-lkd">反馈成功</view>
+    <view class="convv">感谢你对医么的关注与支持，我们会认真处理你的反馈，给你带来更优质的服务</view>
+    <view class="co-end" catchtap="hidemodal2">确认</view>
+  </view>
+</view>

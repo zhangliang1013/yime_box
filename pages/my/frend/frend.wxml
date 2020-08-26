@@ -1,0 +1,31 @@
+<!-- 邀请好友页面 -->
+<view class="shareBg" style="">
+  <image src="/images/shareBg.jpg"></image>
+  <view class="share-content">
+    <view class="share-box">
+      <view class="share-content-one">
+        <image src="{{head_img}}"></image>
+      </view>
+      <view class="share-info">
+        <view class="share-info-box">
+          <image src="/images/shareInfo.png"></image>
+          <view class="share-info-info">
+            分享即可领取<text style="font-size:50rpx;font-weight: bold">3</text>元优惠券，若有好友消费成功,你将获得
+          </view>
+        </view>
+      </view>
+      <view class="money">10</view>
+      <view class="already">
+        <view style="color:#333;font-size:28rpx">你已累计获取得 <text style="color:#f63c30">{{incentive}}</text> 元奖励</view>
+        <view style="color:#999;font-size:20rpx;padding-top:10rpx">邀请越多，奖励越多！</view>
+      </view>
+      <view class="shareBtn">
+        <view class="shareBtn-box">
+          <button open-type="share" style="opacity: 0;position: absolute;top: 0;left: 0;width:100%;height:100%;padding:0;margin:0"></button>
+          <image src="/images/shareBtn.png" ></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="rule"><navigator url="../frend1/frend1">奖励规则</navigator></view>

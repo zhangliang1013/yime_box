@@ -1,0 +1,24 @@
+/* pages/desc/desc.wxss */
+.main{
+
+	background: #f7f7f7;
+}
+.content{
+	font-size: 30rpx;
+	margin: 30rpx;
+	background: #fff;
+  padding: 0 0 28rpx 0;
+
+}
+.row{
+	display: flex;
+	padding: 24rpx 15rpx 0;
+}
+.right{
+  width: 130rpx;
+	margin: 10rpx 0 0 30rpx;
+	color: #a7a7a7;
+}
+.zhi{
+	margin: 10rpx 0 0 30rpx;
+}

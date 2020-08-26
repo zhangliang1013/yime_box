@@ -1,0 +1,157 @@
+<view class="main">
+	<!-- 了解更多按钮 -->
+	<view class="more_btn" bindtap="handleLingdu">
+		<view>了解 </view>
+	  <view>更多</view>
+	</view>
+	<!-- 轮播图 -->
+	<view class="banner">
+		<view class="banner-item">
+			<swiper indicator-dots="false" style="height:100%" autoplay="true" interval="3000" indicatorActiveColor="#fff" duration="1000" indicatorColor="#ccc">
+				<block wx:for="{{imgUrls}}" wx:key='id'>
+					<view data-url="{{item}}" catchtap="link">
+						<swiper-item>
+							<image src="{{item}}" mode="widthFix"  />
+						</swiper-item>
+					</view>
+				</block>
+			</swiper>
+		</view>
+
+		<view class="search">
+			<view class="search-content">
+				<!-- 前面搜索 -->
+				<view bindtap="findAdd" class="search-box">
+					<text class="search-box-text">{{cityss}}</text>
+					<image src="/images/sa.png" style="width: 16rpx;height: 10rpx;margin-left: 10rpx;" mode="widthFix"></image>
+				</view>
+				<!-- 后面文本框搜索 -->
+				<view class="search_input">
+					<image src="/images/search.png" style="width: 24rpx;height: 22rpx;"  mode="widthFix"></image>
+					<input type="text" placeholder="请输入店铺名称或者理疗师名称" bindblur="bindinput" value="{{titles}}" style="font-size:20rpx;padding:0 11rpx;"></input>
+				</view>
+			</view>
+  <!-- 地图找点 -->
+			<view class="search-map" bindtap="findMap">
+				<image src="/images/mapicon@2x.png" style="width:30rpx; height:34rpx;"></image>
+				<view class="map_dian">地图找点</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 上次理疗 -->
+	<view class="last_li" wx:if="{{lately_serve}}">
+	  <image class="shang_img" src="/images/shang.png"  mode="widthFix"></image>
+		<view class="one_shi">
+			<!-- 头像 -->
+			<view class="img">
+				<image src="{{lately.doctor_portrait}}" mode="widthFix"></image>
+			</view>
+			<view class="right">
+				<view class="name">{{lately.doctor_name}}</view>
+				<image src="/images/shangban.png" mode="widthFix"></image>
+				<view class="wuxu">{{lately.work_status_des}}</view>
+			</view>
+		</view>
+				<form report-submit="true" bindsubmit="detail" data-id="{{lately.shop_id}}" data-status="{{item.status}}">
+					<button formType="submit" class="operate1" >再次理疗</button>
+				</form>
+	</view>
+	<!-- 列表 -->
+	<view class="{{lately_serve ? 'list' : 'list  list1'}}" >
+		<view class="row" wx:for="{{showlist}}" wx:key='id' data-id="{{item.id}}" data-status="{{item.status}}" data-count="{{item.count}}">
+			<view class="left">
+				<view class="title-text">
+					<view class="title-name" style="padding-top: 60rpx;">
+						<text wx:if="{{item.name.length < 14}}">{{item.name}} </text>
+							<text wx:if="{{item.name.length >= 14}}" class="two">{{item.name}} </text>
+						<image src="/images/bang@2x.png" mode="widthFix" style="width:102rpx;height:25rpx; "></image>
+					</view>
+				</view>
+
+				<view class="wait-text">
+					<image mode="widthFix" src="/images/renicon@2x.png" wx:if="{{item.underway==0}}" ></image>
+					<image mode="widthFix" src="/images/youren.png" wx:if="{{item.underway != 0}}"></image>
+					<text>{{item.underway}}人正在治疗</text>
+				</view>
+				<view class="area-text" catchtap="penmap" data-latitude='{{item.latitude}}' data-longitude="{{item.longitude}}" data-adde="{{item.address}}">
+					<view class="area-icon">
+						<image src="/images/dingwei.png" style="width:18rpx;height:24rpx;" mode="widthFix" />
+					</view>
+					<view class="area-name">
+						{{item.address}}
+					</view>
+				</view>
+			</view>
+			<view class="right">
+			  <view class="right_zhu"> 
+					<view class="{{index== 0 ? 'juli' : 'juli juli1'}}" >离你{{item.distance}}{{item.units}}</view>
+				<view class="zuijin" wx:if="{{index== 0 && item.distance!=0}}">离你最近</view>
+				<view class="zuijin" wx:if="{{item.distance==0}}">离你最近</view>
+				</view>
+				<form report-submit="true" bindsubmit="detail" data-id="{{item.id}}" data-status="{{item.status}}">
+					<button formType="submit" class="operate" >去理疗</button>
+				</form>
+			</view>
+		</view>
+
+		<view class="empty" wx:if="{{showlist.length == 0}}">暂无营业门店</view>
+	</view>
+
+  <!-- 回到顶部 -->
+  <view class="toTop" bindtap="handleToTop" wx:if="{{isShowTop}}">
+    <view class="arrow"></view>
+    <text>顶部</text>
+  </view>
+</view>
+<!-- 城市搜索的弹窗 -->
+<view class="zhezhao" wx:if="{{is_search}}" bindtap="hideshade"></view>
+<view class="search" wx:if="{{is_search}}">
+	<view class="shangjian">
+		<image src="/images/jiantou.png" mode="widthFix" />
+	</view>
+	<view class="citypoint">
+		<view class="dingwei">
+			<view class="cityposi">{{city}} <text>GPS定位</text></view>
+			
+			<!-- 右侧 -->
+			<view class="mappos" bindtap="findMap">
+				<view class="mapicon">
+					<image src="/images/mapicon.png" mode="widthFix" />
+				</view>
+				<view class="maptext">地图找店</view>
+			</view>
+		</view>
+		<view class="ofiji">
+
+			<view class="cityleft">
+				<block wx:for="{{allCity}}" wx:key='index'>
+					<view bindtap="findShop" class="citytop {{cityIndex == index?'active':''}} " data-index="{{index}}">{{item.name}}</view>
+				</block>
+			</view>
+			<view class="cityright">
+				<block wx:for="{{allCity[cityIndex].sublevel}}" wx:key='index'>
+					<view class="citysec" bindtap="searchShop" data-index="{{index}}">
+						<view class="cityname">{{item.name}}</view>
+						<view class="numshop">{{item.shop_sum}}</view>
+					</view>
+				</block>
+			</view>
+		</view>
+	</view>
+	<!-- 地图选点 -->
+</view>
+
+<!-- 优惠券弹窗 -->
+<view class="youhi-modal" wx:if="{{coupon == 1}}">
+<view class="con-img">
+<view class="header">
+<image src="/images/copon.png"></image>
+</view>
+<view class="title">恭喜您获得新人优惠券</view>
+<view class="btn" bindtap="handBtnCoupon">领取并立即使用</view>
+</view>
+</view>
+<view class="modal" wx:if="{{islog}}">
+	<view class="nameq">定位中,请稍后</view>
+</view>

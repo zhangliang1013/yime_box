@@ -1,0 +1,136 @@
+/* pages/joinapply/joinapply.wxss */
+.main {
+  background: rgba(248, 248, 248, 1);
+  height: 100%;
+}
+
+.main .title1 {
+  font-size: 30rpx;
+  font-family: Source Han Sans CN;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  padding: 20rpx 34rpx;
+}
+
+.main .contain {
+  padding: 0 34rpx;
+  background: #fff;
+}
+
+.main .contain .hezi {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #eee;
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.main .contain .hezi .right {
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(115, 168, 247, 1);
+}
+
+.main .contain .hezi .xingming {
+  width: 166rpx;
+}
+.main .contain .hezi .xingming1 {
+  width: 110rpx;
+}
+
+.main .contain .hezi .shouji {
+  width: 215rpx;
+}
+.main .contain .hezi .shouji1 {
+  width: 155rpx;
+}
+
+.main .contain .hezi .youxiang {
+  width: 166rpx;
+}
+.main .contain .hezi .youxiang1 {
+  width: 250rpx;
+}
+
+
+.main .contain .hezi .right1 {
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(115, 168, 247, 1);
+  display: flex;
+  align-items: center;
+}
+
+.main .contain .hezi .right1 .you {
+  width: 14rpx;
+  height: 26rpx;
+  vertical-align: top;
+  margin-left: 10rpx;
+}
+
+.main .contain .hezi .right input {
+  text-align: end;
+}
+
+.main .title {
+  padding-left: 34rpx;
+  padding-top: 40rpx;
+  padding-bottom: 20rpx;
+  font-size: 30rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+}
+
+.textarea {
+  padding: 20rpx 34rpx;
+  background: #fff;
+  /* width:682rpx;
+height:200rpx;
+margin: 0 auto; */
+}
+
+.textarea>textarea {
+  /* width: 100%;
+  height: 100%; */
+  width: 640rpx;
+  height: 200rpx;
+  background: rgba(177, 206, 250, 1);
+  border-radius: 20rpx;
+  /* font-size:34rpx; */
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  padding: 20rpx;
+  font-size: 24rpx;
+}
+
+.submit {
+  margin: 40rpx auto;
+  width: 650rpx;
+  height: 70rpx;
+  background: linear-gradient(0deg, rgba(21, 109, 241, 1) 0%, rgba(41, 127, 255, 1) 100%);
+  border-radius: 35rpx;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 70rpx;
+}
+
+.weui-cell {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12rpx;
+  font-size: 30rpx;
+}
+
+.jingyan {
+  margin-top: 10rpx;
+}
